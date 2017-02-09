@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5C47ED311E4C006500716D49 /* LTLoginNc.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C47ED301E4C006500716D49 /* LTLoginNc.m */; };
+		5C47ED341E4C073200716D49 /* LTVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C47ED331E4C073200716D49 /* LTVc.m */; };
+		5C47ED381E4C314200716D49 /* LTNc.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C47ED371E4C314200716D49 /* LTNc.m */; };
+		5C47ED3B1E4C32E300716D49 /* LTLoginVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C47ED3A1E4C32E300716D49 /* LTLoginVc.m */; };
 		5C49DB1C1E4AE5E600E72541 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C49DB1B1E4AE5E600E72541 /* main.m */; };
 		5C49DB1F1E4AE5E600E72541 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C49DB1E1E4AE5E600E72541 /* AppDelegate.m */; };
 		5C49DB221E4AE5E600E72541 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C49DB211E4AE5E600E72541 /* ViewController.m */; };
@@ -20,6 +24,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5C47ED2F1E4C006500716D49 /* LTLoginNc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTLoginNc.h; sourceTree = "<group>"; };
+		5C47ED301E4C006500716D49 /* LTLoginNc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTLoginNc.m; sourceTree = "<group>"; };
+		5C47ED321E4C073200716D49 /* LTVc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTVc.h; sourceTree = "<group>"; };
+		5C47ED331E4C073200716D49 /* LTVc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTVc.m; sourceTree = "<group>"; };
+		5C47ED361E4C314200716D49 /* LTNc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTNc.h; sourceTree = "<group>"; };
+		5C47ED371E4C314200716D49 /* LTNc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTNc.m; sourceTree = "<group>"; };
+		5C47ED391E4C32E300716D49 /* LTLoginVc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTLoginVc.h; sourceTree = "<group>"; };
+		5C47ED3A1E4C32E300716D49 /* LTLoginVc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTLoginVc.m; sourceTree = "<group>"; };
 		5C49DB171E4AE5E600E72541 /* lt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C49DB1B1E4AE5E600E72541 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5C49DB1D1E4AE5E600E72541 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -51,6 +63,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5C47ED351E4C078400716D49 /* login */ = {
+			isa = PBXGroup;
+			children = (
+				5C47ED2F1E4C006500716D49 /* LTLoginNc.h */,
+				5C47ED301E4C006500716D49 /* LTLoginNc.m */,
+				5C47ED391E4C32E300716D49 /* LTLoginVc.h */,
+				5C47ED3A1E4C32E300716D49 /* LTLoginVc.m */,
+			);
+			name = login;
+			sourceTree = "<group>";
+		};
 		5C49DB0E1E4AE5E600E72541 = {
 			isa = PBXGroup;
 			children = (
@@ -71,10 +94,10 @@
 		5C49DB191E4AE5E600E72541 /* lt */ = {
 			isa = PBXGroup;
 			children = (
+				5C49DB311E4AE60800E72541 /* libraries */,
+				5C49DB431E4AEB5B00E72541 /* models */,
 				5C49DB451E4AEB6900E72541 /* views */,
 				5C49DB441E4AEB6200E72541 /* controllers */,
-				5C49DB431E4AEB5B00E72541 /* models */,
-				5C49DB311E4AE60800E72541 /* libraries */,
 				5C49DB1D1E4AE5E600E72541 /* AppDelegate.h */,
 				5C49DB1E1E4AE5E600E72541 /* AppDelegate.m */,
 				5C49DB201E4AE5E600E72541 /* ViewController.h */,
@@ -125,6 +148,11 @@
 		5C49DB441E4AEB6200E72541 /* controllers */ = {
 			isa = PBXGroup;
 			children = (
+				5C47ED361E4C314200716D49 /* LTNc.h */,
+				5C47ED371E4C314200716D49 /* LTNc.m */,
+				5C47ED321E4C073200716D49 /* LTVc.h */,
+				5C47ED331E4C073200716D49 /* LTVc.m */,
+				5C47ED351E4C078400716D49 /* login */,
 			);
 			name = controllers;
 			sourceTree = "<group>";
@@ -208,9 +236,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C47ED3B1E4C32E300716D49 /* LTLoginVc.m in Sources */,
 				5C49DB4B1E4B03C300E72541 /* User.m in Sources */,
+				5C47ED381E4C314200716D49 /* LTNc.m in Sources */,
 				5C49DB221E4AE5E600E72541 /* ViewController.m in Sources */,
+				5C47ED341E4C073200716D49 /* LTVc.m in Sources */,
 				5C49DB1F1E4AE5E600E72541 /* AppDelegate.m in Sources */,
+				5C47ED311E4C006500716D49 /* LTLoginNc.m in Sources */,
 				5C49DB1C1E4AE5E600E72541 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -376,6 +408,7 @@
 				5C49DB301E4AE5E600E72541 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
