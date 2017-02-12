@@ -18,7 +18,7 @@
  Subclasses support simpler initializers, query syntax, and dynamic synthesizers. The following shows an example subclass:
  
  ```
- @interface MYGame : AVObject< AVSubclassing >
+ interface MYGame : AVObject< AVSubclassing >
  // Accessing this property is the same as objectForKey:@"title"
  @property (retain) NSString *title;
  + (NSString *)parseClassName;

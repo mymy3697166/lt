@@ -11,6 +11,9 @@
 @interface LTLoginVc () {
   
   __weak IBOutlet UIImageView *ivBg;
+  __weak IBOutlet UITextField *tfUid;
+  __weak IBOutlet UITextField *tfPwd;
+  __weak IBOutlet UIButton *btnLogin;
 }
 @end
 
@@ -18,9 +21,17 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
+  // 增加背景毛玻璃效果
   UIBlurEffect *effect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
   UIVisualEffectView *glassView = [[UIVisualEffectView alloc] initWithEffect:effect];
+  glassView.frame = ivBg.bounds;
+  glassView.alpha = 0.9;
   [ivBg addSubview:glassView];
+  // 修改文本框placeholder字体颜色
+  tfUid.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"手机号" attributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
+  tfPwd.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"密码" attributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
+  // 登录按钮圆角
+  btnLogin.layer.cornerRadius = 20;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -30,5 +41,11 @@
 
 - (void)viewWillDisappear:(BOOL)animated {
   [super viewWillDisappear:animated];
+  [self.navigationController setNavigationBarHidden:NO animated:YES];
+}
+
+- (IBAction)bgClick:(UITapGestureRecognizer *)sender {
+  [tfUid resignFirstResponder];
+  [tfPwd resignFirstResponder];
 }
 @end

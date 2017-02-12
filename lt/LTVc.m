@@ -16,9 +16,8 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-}
-
-- (void)didReceiveMemoryWarning {
-  [super didReceiveMemoryWarning];
+  UIBarButtonItem *temporaryBarButtonItem = [[UIBarButtonItem alloc] init];
+  temporaryBarButtonItem.title = @"";
+  self.navigationItem.backBarButtonItem = temporaryBarButtonItem;
 }
 @end

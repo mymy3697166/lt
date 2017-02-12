@@ -1,13 +1,13 @@
 //
-//  LTLoginVc.h
+//  LTRegisterVc.h
 //  lt
 //
-//  Created by zjz on 2017/2/9.
+//  Created by zjz on 17/2/9.
 //  Copyright © 2017年 zjz. All rights reserved.
 //
 
 #import "LTVc.h"
 
-@interface LTLoginVc : LTVc
+@interface LTRegisterVc : LTVc
 
 @end

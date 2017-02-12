@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		001FF5FE1E4E1625003B35A8 /* BTCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 001FF5F11E4E1625003B35A8 /* BTCommon.m */; };
+		001FF5FF1E4E1625003B35A8 /* NSArray+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 001FF5F31E4E1625003B35A8 /* NSArray+Extension.m */; };
+		001FF6001E4E1625003B35A8 /* NSData+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 001FF5F51E4E1625003B35A8 /* NSData+Extension.m */; };
+		001FF6011E4E1625003B35A8 /* NSDate+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 001FF5F71E4E1625003B35A8 /* NSDate+Extension.m */; };
+		001FF6021E4E1625003B35A8 /* NSObject+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 001FF5F91E4E1625003B35A8 /* NSObject+Extension.m */; };
+		001FF6031E4E1625003B35A8 /* NSString+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 001FF5FB1E4E1625003B35A8 /* NSString+Extension.m */; };
+		001FF6041E4E1625003B35A8 /* UIImageView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 001FF5FD1E4E1625003B35A8 /* UIImageView+Extension.m */; };
+		0059142B1E4DB1CD00375902 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 0059142A1E4DB1CD00375902 /* MBProgressHUD.m */; };
+		0059142F1E4DC76C00375902 /* LTInputInfoVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 0059142E1E4DC76C00375902 /* LTInputInfoVc.m */; };
+		009743D31E4CBF930042E6CD /* LTRegisterVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 009743D21E4CBF930042E6CD /* LTRegisterVc.m */; };
 		5C47ED311E4C006500716D49 /* LTLoginNc.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C47ED301E4C006500716D49 /* LTLoginNc.m */; };
 		5C47ED341E4C073200716D49 /* LTVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C47ED331E4C073200716D49 /* LTVc.m */; };
 		5C47ED381E4C314200716D49 /* LTNc.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C47ED371E4C314200716D49 /* LTNc.m */; };
@@ -24,6 +34,26 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		001FF5F01E4E1625003B35A8 /* BTCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTCommon.h; sourceTree = "<group>"; };
+		001FF5F11E4E1625003B35A8 /* BTCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTCommon.m; sourceTree = "<group>"; };
+		001FF5F21E4E1625003B35A8 /* NSArray+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Extension.h"; sourceTree = "<group>"; };
+		001FF5F31E4E1625003B35A8 /* NSArray+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Extension.m"; sourceTree = "<group>"; };
+		001FF5F41E4E1625003B35A8 /* NSData+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Extension.h"; sourceTree = "<group>"; };
+		001FF5F51E4E1625003B35A8 /* NSData+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Extension.m"; sourceTree = "<group>"; };
+		001FF5F61E4E1625003B35A8 /* NSDate+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Extension.h"; sourceTree = "<group>"; };
+		001FF5F71E4E1625003B35A8 /* NSDate+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Extension.m"; sourceTree = "<group>"; };
+		001FF5F81E4E1625003B35A8 /* NSObject+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Extension.h"; sourceTree = "<group>"; };
+		001FF5F91E4E1625003B35A8 /* NSObject+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Extension.m"; sourceTree = "<group>"; };
+		001FF5FA1E4E1625003B35A8 /* NSString+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Extension.h"; sourceTree = "<group>"; };
+		001FF5FB1E4E1625003B35A8 /* NSString+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Extension.m"; sourceTree = "<group>"; };
+		001FF5FC1E4E1625003B35A8 /* UIImageView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+Extension.h"; sourceTree = "<group>"; };
+		001FF5FD1E4E1625003B35A8 /* UIImageView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+Extension.m"; sourceTree = "<group>"; };
+		005914291E4DB1CD00375902 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		0059142A1E4DB1CD00375902 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		0059142D1E4DC76C00375902 /* LTInputInfoVc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTInputInfoVc.h; sourceTree = "<group>"; };
+		0059142E1E4DC76C00375902 /* LTInputInfoVc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTInputInfoVc.m; sourceTree = "<group>"; };
+		009743D11E4CBF930042E6CD /* LTRegisterVc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTRegisterVc.h; sourceTree = "<group>"; };
+		009743D21E4CBF930042E6CD /* LTRegisterVc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTRegisterVc.m; sourceTree = "<group>"; };
 		5C47ED2F1E4C006500716D49 /* LTLoginNc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTLoginNc.h; sourceTree = "<group>"; };
 		5C47ED301E4C006500716D49 /* LTLoginNc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTLoginNc.m; sourceTree = "<group>"; };
 		5C47ED321E4C073200716D49 /* LTVc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTVc.h; sourceTree = "<group>"; };
@@ -63,6 +93,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		001FF5EF1E4E160B003B35A8 /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				001FF5F01E4E1625003B35A8 /* BTCommon.h */,
+				001FF5F11E4E1625003B35A8 /* BTCommon.m */,
+				001FF5F21E4E1625003B35A8 /* NSArray+Extension.h */,
+				001FF5F31E4E1625003B35A8 /* NSArray+Extension.m */,
+				001FF5F41E4E1625003B35A8 /* NSData+Extension.h */,
+				001FF5F51E4E1625003B35A8 /* NSData+Extension.m */,
+				001FF5F61E4E1625003B35A8 /* NSDate+Extension.h */,
+				001FF5F71E4E1625003B35A8 /* NSDate+Extension.m */,
+				001FF5F81E4E1625003B35A8 /* NSObject+Extension.h */,
+				001FF5F91E4E1625003B35A8 /* NSObject+Extension.m */,
+				001FF5FA1E4E1625003B35A8 /* NSString+Extension.h */,
+				001FF5FB1E4E1625003B35A8 /* NSString+Extension.m */,
+				001FF5FC1E4E1625003B35A8 /* UIImageView+Extension.h */,
+				001FF5FD1E4E1625003B35A8 /* UIImageView+Extension.m */,
+			);
+			name = utils;
+			sourceTree = "<group>";
+		};
 		5C47ED351E4C078400716D49 /* login */ = {
 			isa = PBXGroup;
 			children = (
@@ -70,6 +121,10 @@
 				5C47ED301E4C006500716D49 /* LTLoginNc.m */,
 				5C47ED391E4C32E300716D49 /* LTLoginVc.h */,
 				5C47ED3A1E4C32E300716D49 /* LTLoginVc.m */,
+				009743D11E4CBF930042E6CD /* LTRegisterVc.h */,
+				009743D21E4CBF930042E6CD /* LTRegisterVc.m */,
+				0059142D1E4DC76C00375902 /* LTInputInfoVc.h */,
+				0059142E1E4DC76C00375902 /* LTInputInfoVc.m */,
 			);
 			name = login;
 			sourceTree = "<group>";
@@ -95,6 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				5C49DB311E4AE60800E72541 /* libraries */,
+				001FF5EF1E4E160B003B35A8 /* utils */,
 				5C49DB431E4AEB5B00E72541 /* models */,
 				5C49DB451E4AEB6900E72541 /* views */,
 				5C49DB441E4AEB6200E72541 /* controllers */,
@@ -122,6 +178,8 @@
 		5C49DB311E4AE60800E72541 /* libraries */ = {
 			isa = PBXGroup;
 			children = (
+				005914291E4DB1CD00375902 /* MBProgressHUD.h */,
+				0059142A1E4DB1CD00375902 /* MBProgressHUD.m */,
 			);
 			name = libraries;
 			sourceTree = "<group>";
@@ -195,7 +253,7 @@
 				TargetAttributes = {
 					5C49DB161E4AE5E600E72541 = {
 						CreatedOnToolsVersion = 8.2;
-						DevelopmentTeam = 77Z6WQB2YV;
+						DevelopmentTeam = 5ZDM7H945X;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -240,10 +298,20 @@
 				5C49DB4B1E4B03C300E72541 /* User.m in Sources */,
 				5C47ED381E4C314200716D49 /* LTNc.m in Sources */,
 				5C49DB221E4AE5E600E72541 /* ViewController.m in Sources */,
+				001FF5FE1E4E1625003B35A8 /* BTCommon.m in Sources */,
+				001FF5FF1E4E1625003B35A8 /* NSArray+Extension.m in Sources */,
+				009743D31E4CBF930042E6CD /* LTRegisterVc.m in Sources */,
+				0059142F1E4DC76C00375902 /* LTInputInfoVc.m in Sources */,
+				001FF6001E4E1625003B35A8 /* NSData+Extension.m in Sources */,
 				5C47ED341E4C073200716D49 /* LTVc.m in Sources */,
 				5C49DB1F1E4AE5E600E72541 /* AppDelegate.m in Sources */,
+				001FF6011E4E1625003B35A8 /* NSDate+Extension.m in Sources */,
+				001FF6031E4E1625003B35A8 /* NSString+Extension.m in Sources */,
+				0059142B1E4DB1CD00375902 /* MBProgressHUD.m in Sources */,
 				5C47ED311E4C006500716D49 /* LTLoginNc.m in Sources */,
 				5C49DB1C1E4AE5E600E72541 /* main.m in Sources */,
+				001FF6041E4E1625003B35A8 /* UIImageView+Extension.m in Sources */,
+				001FF6021E4E1625003B35A8 /* NSObject+Extension.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -361,7 +429,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 77Z6WQB2YV;
+				DEVELOPMENT_TEAM = 5ZDM7H945X;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/lt",
@@ -377,7 +445,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 77Z6WQB2YV;
+				DEVELOPMENT_TEAM = 5ZDM7H945X;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/lt",

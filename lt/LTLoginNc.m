@@ -16,9 +16,8 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-}
-
-- (void)didReceiveMemoryWarning {
-  [super didReceiveMemoryWarning];
+  self.navigationBar.tintColor = [UIColor blackColor];
+  [self.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
+  [self.navigationBar setShadowImage:[UIImage new]];
 }
 @end
