@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-#import "BTCommon.h"
+#import "LTCommon.h"
 
 @interface UIImageView(Extension)
 - (void)loadURL:(NSString *)url;

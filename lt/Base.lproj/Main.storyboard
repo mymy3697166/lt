@@ -416,11 +416,6 @@
                                     <constraint firstAttribute="height" constant="0.5" id="tSh-nC-yUk"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dwo-tk-NmP">
-                                <rect key="frame" x="327" y="297" width="16" height="18"/>
-                                <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" image="icon_go"/>
-                            </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="输入性别" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jyb-t3-WmI">
                                 <rect key="frame" x="32" y="282" width="311" height="48"/>
                                 <gestureRecognizers/>
@@ -430,6 +425,11 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dwo-tk-NmP">
+                                <rect key="frame" x="327" y="297" width="16" height="18"/>
+                                <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" image="icon_go"/>
+                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HBH-kz-68Y">
                                 <rect key="frame" x="32" y="330" width="311" height="0.5"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -437,25 +437,38 @@
                                     <constraint firstAttribute="height" constant="0.5" id="l83-Gb-vqs"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GV0-pS-hwx">
-                                <rect key="frame" x="327" y="361.5" width="16" height="18"/>
-                                <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" image="icon_go"/>
-                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MrC-aA-tRZ">
+                                <rect key="frame" x="32" y="282" width="311" height="48"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Tzc-HH-7IY" appends="YES" id="ejl-3Z-4sF"/>
+                                </connections>
+                            </view>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="输入生日" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nzK-c4-et9">
-                                <rect key="frame" x="32" y="346.5" width="311" height="48"/>
+                                <rect key="frame" x="32" y="346" width="311" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="AOn-ty-ako"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GV0-pS-hwx">
+                                <rect key="frame" x="327" y="361" width="16" height="18"/>
+                                <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" image="icon_go"/>
+                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1wd-KL-cXe">
-                                <rect key="frame" x="32" y="394.5" width="311" height="0.5"/>
+                                <rect key="frame" x="32" y="394" width="311" height="0.5"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="0.5" id="Eq9-zx-p2c"/>
                                 </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t6l-56-8rd">
+                                <rect key="frame" x="32" y="346" width="311" height="48"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="jkF-Az-3Bd" appends="YES" id="CF5-nc-cIG"/>
+                                </connections>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dy6-jL-wy9">
                                 <rect key="frame" x="32" y="455" width="311" height="40"/>
@@ -470,12 +483,6 @@
                                     <action selector="registerClick:" destination="scD-Gt-BUU" eventType="touchUpInside" id="vOe-cN-ooV"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MrC-aA-tRZ">
-                                <rect key="frame" x="32" y="282" width="311" height="48"/>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="Tzc-HH-7IY" appends="YES" id="ejl-3Z-4sF"/>
-                                </connections>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -489,6 +496,7 @@
                             <constraint firstItem="SnU-RT-iRx" firstAttribute="centerX" secondItem="wOL-q6-e8e" secondAttribute="centerX" id="AMD-Ax-r26"/>
                             <constraint firstItem="Dy6-jL-wy9" firstAttribute="trailing" secondItem="CKe-T2-Dfm" secondAttribute="trailing" id="BII-hP-Nbp"/>
                             <constraint firstItem="1wd-KL-cXe" firstAttribute="leading" secondItem="nzK-c4-et9" secondAttribute="leading" id="ByO-fq-Y4G"/>
+                            <constraint firstItem="t6l-56-8rd" firstAttribute="trailing" secondItem="nzK-c4-et9" secondAttribute="trailing" id="CKu-Bf-5rg"/>
                             <constraint firstItem="1wd-KL-cXe" firstAttribute="top" secondItem="nzK-c4-et9" secondAttribute="bottom" id="Cp7-WC-i2z"/>
                             <constraint firstItem="Dwo-tk-NmP" firstAttribute="trailing" secondItem="jyb-t3-WmI" secondAttribute="trailing" id="F4i-6j-Iht"/>
                             <constraint firstItem="CKe-T2-Dfm" firstAttribute="top" secondItem="SnU-RT-iRx" secondAttribute="bottom" constant="30" id="Hty-ku-FbU"/>
@@ -496,6 +504,7 @@
                             <constraint firstItem="GV0-pS-hwx" firstAttribute="trailing" secondItem="nzK-c4-et9" secondAttribute="trailing" id="L0T-5E-8Cw"/>
                             <constraint firstItem="HBH-kz-68Y" firstAttribute="leading" secondItem="jyb-t3-WmI" secondAttribute="leading" id="L7b-E3-Qax"/>
                             <constraint firstItem="nzK-c4-et9" firstAttribute="leading" secondItem="jyb-t3-WmI" secondAttribute="leading" id="LA3-GW-0SB"/>
+                            <constraint firstItem="t6l-56-8rd" firstAttribute="top" secondItem="nzK-c4-et9" secondAttribute="top" id="RwC-Jm-2Tj"/>
                             <constraint firstItem="Dwo-tk-NmP" firstAttribute="centerY" secondItem="jyb-t3-WmI" secondAttribute="centerY" id="SNa-6C-gRN"/>
                             <constraint firstItem="1wd-KL-cXe" firstAttribute="trailing" secondItem="nzK-c4-et9" secondAttribute="trailing" id="boi-wC-w44"/>
                             <constraint firstItem="MrC-aA-tRZ" firstAttribute="bottom" secondItem="jyb-t3-WmI" secondAttribute="bottom" id="cjo-FF-i6u"/>
@@ -503,8 +512,10 @@
                             <constraint firstItem="SnU-RT-iRx" firstAttribute="top" secondItem="vPn-fJ-n9R" secondAttribute="bottom" constant="16" id="eUp-sL-73O"/>
                             <constraint firstItem="jyb-t3-WmI" firstAttribute="top" secondItem="tLq-fO-vNF" secondAttribute="bottom" constant="16" id="fwa-3G-5nl"/>
                             <constraint firstItem="CKe-T2-Dfm" firstAttribute="leading" secondItem="wOL-q6-e8e" secondAttribute="leading" constant="32" id="h8x-eb-VTN"/>
+                            <constraint firstItem="t6l-56-8rd" firstAttribute="bottom" secondItem="nzK-c4-et9" secondAttribute="bottom" id="jjf-SZ-xVZ"/>
                             <constraint firstItem="MrC-aA-tRZ" firstAttribute="leading" secondItem="jyb-t3-WmI" secondAttribute="leading" id="mek-ZV-rgn"/>
                             <constraint firstItem="MrC-aA-tRZ" firstAttribute="top" secondItem="jyb-t3-WmI" secondAttribute="top" id="oFQ-X9-InP"/>
+                            <constraint firstItem="t6l-56-8rd" firstAttribute="leading" secondItem="nzK-c4-et9" secondAttribute="leading" id="oIF-yS-GfC"/>
                             <constraint firstItem="SnU-RT-iRx" firstAttribute="width" secondItem="wOL-q6-e8e" secondAttribute="width" multiplier="2:7" id="oVu-Qr-eQG"/>
                             <constraint firstItem="tLq-fO-vNF" firstAttribute="trailing" secondItem="CKe-T2-Dfm" secondAttribute="trailing" id="raS-hE-V8K"/>
                             <constraint firstItem="HBH-kz-68Y" firstAttribute="trailing" secondItem="jyb-t3-WmI" secondAttribute="trailing" id="s5o-mf-SiV"/>
@@ -525,6 +536,11 @@
                 <tapGestureRecognizer id="Tzc-HH-7IY">
                     <connections>
                         <action selector="genderClick:" destination="xeX-DT-2jx" id="3Di-4f-8Mw"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="jkF-Az-3Bd">
+                    <connections>
+                        <action selector="dobClick:" destination="xeX-DT-2jx" id="2fF-tX-bu8"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>

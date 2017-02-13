@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <UIKit/UIVisualEffectView.h>
+#import "LTCommon.h"
 
 @interface LTVc : UIViewController
 

@@ -13,7 +13,7 @@
   UIView *dView = [[UIView alloc] initWithFrame:self.frame];
   dView.backgroundColor = [UIColor lightGrayColor];
   [self.superview addSubview:dView];
-  [Common cacheImage:url completion:^(UIImage *image) {
+  [Cm cacheImage:url completion:^(UIImage *image) {
     self.image = image;
     [UIView animateWithDuration:0.1 animations:^{
       dView.alpha = 0;

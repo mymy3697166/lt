@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		001FF5FE1E4E1625003B35A8 /* BTCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 001FF5F11E4E1625003B35A8 /* BTCommon.m */; };
+		001FF5FE1E4E1625003B35A8 /* LTCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 001FF5F11E4E1625003B35A8 /* LTCommon.m */; };
 		001FF5FF1E4E1625003B35A8 /* NSArray+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 001FF5F31E4E1625003B35A8 /* NSArray+Extension.m */; };
 		001FF6001E4E1625003B35A8 /* NSData+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 001FF5F51E4E1625003B35A8 /* NSData+Extension.m */; };
 		001FF6011E4E1625003B35A8 /* NSDate+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 001FF5F71E4E1625003B35A8 /* NSDate+Extension.m */; };
@@ -34,8 +34,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		001FF5F01E4E1625003B35A8 /* BTCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTCommon.h; sourceTree = "<group>"; };
-		001FF5F11E4E1625003B35A8 /* BTCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTCommon.m; sourceTree = "<group>"; };
+		001FF5F01E4E1625003B35A8 /* LTCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTCommon.h; sourceTree = "<group>"; };
+		001FF5F11E4E1625003B35A8 /* LTCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTCommon.m; sourceTree = "<group>"; };
 		001FF5F21E4E1625003B35A8 /* NSArray+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Extension.h"; sourceTree = "<group>"; };
 		001FF5F31E4E1625003B35A8 /* NSArray+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Extension.m"; sourceTree = "<group>"; };
 		001FF5F41E4E1625003B35A8 /* NSData+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Extension.h"; sourceTree = "<group>"; };
@@ -96,8 +96,8 @@
 		001FF5EF1E4E160B003B35A8 /* utils */ = {
 			isa = PBXGroup;
 			children = (
-				001FF5F01E4E1625003B35A8 /* BTCommon.h */,
-				001FF5F11E4E1625003B35A8 /* BTCommon.m */,
+				001FF5F01E4E1625003B35A8 /* LTCommon.h */,
+				001FF5F11E4E1625003B35A8 /* LTCommon.m */,
 				001FF5F21E4E1625003B35A8 /* NSArray+Extension.h */,
 				001FF5F31E4E1625003B35A8 /* NSArray+Extension.m */,
 				001FF5F41E4E1625003B35A8 /* NSData+Extension.h */,
@@ -298,7 +298,7 @@
 				5C49DB4B1E4B03C300E72541 /* User.m in Sources */,
 				5C47ED381E4C314200716D49 /* LTNc.m in Sources */,
 				5C49DB221E4AE5E600E72541 /* ViewController.m in Sources */,
-				001FF5FE1E4E1625003B35A8 /* BTCommon.m in Sources */,
+				001FF5FE1E4E1625003B35A8 /* LTCommon.m in Sources */,
 				001FF5FF1E4E1625003B35A8 /* NSArray+Extension.m in Sources */,
 				009743D31E4CBF930042E6CD /* LTRegisterVc.m in Sources */,
 				0059142F1E4DC76C00375902 /* LTInputInfoVc.m in Sources */,
