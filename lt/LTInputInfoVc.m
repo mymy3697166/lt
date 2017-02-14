@@ -9,7 +9,7 @@
 #import "LTInputInfoVc.h"
 
 @interface LTInputInfoVc () <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIPickerViewDelegate, UIPickerViewDataSource> {
-  __weak IBOutlet UIButton *btnSelectAvatar;
+  __weak IBOutlet UIButton *btnAvatar;
   __weak IBOutlet UITextField *tfNickname;
   __weak IBOutlet UITextField *tfGender;
   __weak IBOutlet UITextField *tfDob;
@@ -23,6 +23,7 @@
   
   NSString *gender;
   NSDate *dob;
+  NSString *avatar;
   NSInteger days;
 }
 
@@ -33,13 +34,14 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
   btnNext.layer.cornerRadius = 20;
+  btnAvatar.layer.cornerRadius = btnAvatar.bounds.size.width / 2;
   
   days = 31;
 }
 
 - (void)viewDidAppear:(BOOL)animated {
   [super viewDidAppear:animated];
-  
+  // 选择头像菜单
   avatarAlert = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
   ipc = [[UIImagePickerController alloc] init];
   ipc.allowsEditing = YES;
@@ -54,7 +56,7 @@
   }];
   [avatarAlert addAction:cameraAction];
   [avatarAlert addAction:albumAction];
-  
+  // 选择性别菜单
   genderAlert = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
   UIAlertAction *mAction = [UIAlertAction actionWithTitle:@"男" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
     tfGender.text = @"男";
@@ -66,7 +68,7 @@
   }];
   [genderAlert addAction:mAction];
   [genderAlert addAction:fAction];
-  
+  // 选择生日菜单
   dobAlert = [UIAlertController alertControllerWithTitle:@"\n\n\n\n\n\n\n" message:nil preferredStyle:UIAlertControllerStyleActionSheet];
   picker = [[UIPickerView alloc] initWithFrame:CGRectMake(16, 8, dobAlert.view.bounds.size.width - 52, 140)];
   picker.delegate = self;
@@ -122,19 +124,20 @@
 }
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
-//  UIImage *image = info[UIImagePickerControllerEditedImage];
-//  NSData *data = [Common compressAvatar:image];
-//  [Common showLoading];
-//  [Common asyncPost:URL_UPLOADAVATAR forms:@{@"images": @[[data toBase64String]]} completion:^(NSDictionary *data) {
-//    [Common hideLoading];
-//    if (!data) return;
-//    if ([data[@"status"] isEqual:@0]) {
-//      avatar = data[@"data"][0];
-//      [Common cacheImage:[URL_AVATARPATH stringByAppendingString:avatar] completion:^(UIImage *image) {
-//        [btnAvatar setBackgroundImage:image forState:UIControlStateNormal];
-//      }];
-//    }
-//  }];
+  UIImage *image = info[UIImagePickerControllerEditedImage];
+  NSData *data = [Cm compressAvatar:image];
+  [Cm showLoading];
+  NSString *fn = [NSString stringWithFormat:@"%@.jpg", [[NSDate date] toStringWithFormat:@"yyyyMMddhhmmssSSS"] ];
+  AVFile *file = [AVFile fileWithName:fn data:data];
+  [file saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+    [Cm hideLoading];
+    if (error) {
+      NSLog(@"%@", error);
+      return;
+    }
+    avatar = file.objectId;
+    [btnAvatar setBackgroundImage:[UIImage imageWithData:data] forState:UIControlStateNormal];
+  }];
   [ipc dismissViewControllerAnimated:YES completion:nil];
 }
 
@@ -142,7 +145,7 @@
   [ipc dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (IBAction)selectAvatarClick:(UIButton *)sender {
+- (IBAction)avatarClick:(UIButton *)sender {
   [self presentViewController:avatarAlert animated:YES completion:nil];
 }
 
@@ -152,5 +155,9 @@
 
 - (IBAction)dobClick:(UITapGestureRecognizer *)sender {
   [self presentViewController:dobAlert animated:YES completion:nil];
+}
+
+- (IBAction)bgClick:(UITapGestureRecognizer *)sender {
+  [tfNickname resignFirstResponder];
 }
 @end

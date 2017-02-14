@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="sbP-bD-h7i">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="sbP-bD-h7i">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -389,7 +389,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SnU-RT-iRx">
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SnU-RT-iRx">
                                 <rect key="frame" x="134" y="80" width="107" height="107"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="SnU-RT-iRx" secondAttribute="height" id="CVD-KS-GMX"/>
@@ -397,7 +397,7 @@
                                 <color key="tintColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" backgroundImage="select_avatar"/>
                                 <connections>
-                                    <action selector="selectAvatarClick:" destination="xeX-DT-2jx" eventType="touchUpInside" id="5G4-M6-4pI"/>
+                                    <action selector="avatarClick:" destination="xeX-DT-2jx" eventType="touchUpInside" id="ht3-t0-xzH"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="输入昵称" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="CKe-T2-Dfm">
@@ -485,6 +485,7 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="nzK-c4-et9" firstAttribute="trailing" secondItem="jyb-t3-WmI" secondAttribute="trailing" id="0Z4-Sn-1qx"/>
                             <constraint firstItem="tLq-fO-vNF" firstAttribute="leading" secondItem="CKe-T2-Dfm" secondAttribute="leading" id="1ac-2u-8vI"/>
@@ -523,10 +524,13 @@
                             <constraint firstItem="Dy6-jL-wy9" firstAttribute="leading" secondItem="CKe-T2-Dfm" secondAttribute="leading" id="uEh-UM-Zgx"/>
                             <constraint firstItem="jyb-t3-WmI" firstAttribute="leading" secondItem="CKe-T2-Dfm" secondAttribute="leading" id="uQi-fZ-oVG"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="cUu-uA-cjs" appends="YES" id="8Un-UU-4PL"/>
+                        </connections>
                     </view>
                     <connections>
+                        <outlet property="btnAvatar" destination="SnU-RT-iRx" id="uRR-bD-0pe"/>
                         <outlet property="btnNext" destination="Dy6-jL-wy9" id="isD-fF-Npf"/>
-                        <outlet property="btnSelectAvatar" destination="SnU-RT-iRx" id="JQD-F0-8cz"/>
                         <outlet property="tfDob" destination="nzK-c4-et9" id="5Z9-fh-IlU"/>
                         <outlet property="tfGender" destination="jyb-t3-WmI" id="III-06-fjl"/>
                         <outlet property="tfNickname" destination="CKe-T2-Dfm" id="MAC-OK-Yr2"/>
@@ -541,6 +545,11 @@
                 <tapGestureRecognizer id="jkF-Az-3Bd">
                     <connections>
                         <action selector="dobClick:" destination="xeX-DT-2jx" id="2fF-tX-bu8"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="cUu-uA-cjs">
+                    <connections>
+                        <action selector="bgClick:" destination="xeX-DT-2jx" id="lcx-PB-vcT"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
