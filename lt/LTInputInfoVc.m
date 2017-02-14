@@ -39,6 +39,16 @@
   days = 31;
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+  [super viewWillAppear:animated];
+  [self.navigationController setNavigationBarHidden:YES animated:animated];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+  [super viewWillDisappear:animated];
+  [self.navigationController setNavigationBarHidden:NO animated:animated];
+}
+
 - (void)viewDidAppear:(BOOL)animated {
   [super viewDidAppear:animated];
   // 选择头像菜单
@@ -46,28 +56,30 @@
   ipc = [[UIImagePickerController alloc] init];
   ipc.allowsEditing = YES;
   ipc.delegate = self;
-  UIAlertAction *cameraAction = [UIAlertAction actionWithTitle:@"拍照" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+  [avatarAlert addAction:[UIAlertAction actionWithTitle:@"拍照" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
     ipc.sourceType = UIImagePickerControllerSourceTypeCamera;
     [self presentViewController:ipc animated:YES completion:nil];
-  }];
-  UIAlertAction *albumAction = [UIAlertAction actionWithTitle:@"相册" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+  }]];
+  [avatarAlert addAction:[UIAlertAction actionWithTitle:@"相册" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
     ipc.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
     [self presentViewController:ipc animated:YES completion:nil];
-  }];
-  [avatarAlert addAction:cameraAction];
-  [avatarAlert addAction:albumAction];
+  }]];
+  [avatarAlert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+    [avatarAlert dismissViewControllerAnimated:YES completion:nil];
+  }]];
   // 选择性别菜单
   genderAlert = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
-  UIAlertAction *mAction = [UIAlertAction actionWithTitle:@"男" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+  [genderAlert addAction:[UIAlertAction actionWithTitle:@"男" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
     tfGender.text = @"男";
     gender = @"M";
-  }];
-  UIAlertAction *fAction = [UIAlertAction actionWithTitle:@"女" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+  }]];
+  [genderAlert addAction:[UIAlertAction actionWithTitle:@"女" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
     tfGender.text = @"女";
     gender = @"F";
-  }];
-  [genderAlert addAction:mAction];
-  [genderAlert addAction:fAction];
+  }]];
+  [genderAlert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+    [genderAlert dismissViewControllerAnimated:YES completion:nil];
+  }]];
   // 选择生日菜单
   dobAlert = [UIAlertController alertControllerWithTitle:@"\n\n\n\n\n\n\n" message:nil preferredStyle:UIAlertControllerStyleActionSheet];
   picker = [[UIPickerView alloc] initWithFrame:CGRectMake(16, 8, dobAlert.view.bounds.size.width - 52, 140)];
@@ -76,15 +88,17 @@
   [picker selectRow:74 inComponent:0 animated:NO];
   [picker selectRow:6 inComponent:1 animated:NO];
   [picker selectRow:14 inComponent:2 animated:NO];
-  UIAlertAction *yesAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+  [dobAlert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
     NSInteger nowYear = [[NSDate date] year];
     NSInteger year = nowYear - 99 + [picker selectedRowInComponent:0];
     NSInteger month = [picker selectedRowInComponent:1] + 1;
     NSInteger day = [picker selectedRowInComponent:2] + 1;
     dob = [[NSString stringWithFormat:@"%ld-%02ld-%02ld", (long)year, (long)month, (long)day] toDateWithFormat:@"yyyy-MM-dd"];
     tfDob.text = [dob toStringWithFormat:@"yyyy年MM月dd日"];
-  }];
-  [dobAlert addAction:yesAction];
+  }]];
+  [dobAlert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+    [dobAlert dismissViewControllerAnimated:YES completion:nil];
+  }]];
 }
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {return 3;}
@@ -135,7 +149,7 @@
       NSLog(@"%@", error);
       return;
     }
-    avatar = file.objectId;
+    avatar = file.url;
     [btnAvatar setBackgroundImage:[UIImage imageWithData:data] forState:UIControlStateNormal];
   }];
   [ipc dismissViewControllerAnimated:YES completion:nil];
