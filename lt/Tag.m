@@ -28,7 +28,7 @@
 
 + (void)findAllInBackgroundWithBlock:(void (^)(NSArray *))block {
   AVQuery *query = [AVQuery queryWithClassName:[Tag parseClassName]];
-  query.cachePolicy = kAVCachePolicyCacheThenNetwork;
+  query.cachePolicy = kAVCachePolicyCacheElseNetwork;
   [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
     block(objects);
   }];

@@ -16,8 +16,8 @@
   UIColor *color;
 }
 
-- (void)awakeFromNib {
-  [super awakeFromNib];
+- (void)layoutSubviews {
+  [super layoutSubviews];
   btnIcon.layer.cornerRadius = btnIcon.bounds.size.width / 2;
 }
 
