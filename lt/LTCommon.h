@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-#import "User.h"
+#import "Model.h"
 #import "NSObject+Extension.h"
 #import "NSDate+Extension.h"
 #import "NSString+Extension.h"

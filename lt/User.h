@@ -8,5 +8,5 @@
 
 #import <AVOSCloud/AVOSCloud.h>
 
-@interface User : AVUser
+@interface User : AVUser<AVSubclassing>
 @end

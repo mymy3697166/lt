@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import <AVOSCloud/AVOSCloud.h>
+#import "Model.h"
 
 @interface AppDelegate ()
 
@@ -18,6 +19,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
   [AVOSCloud setApplicationId:@"TiBRiwG5v0EPnoW81FiMJsqV-gzGzoHsz" clientKey:@"NrCSA4FgWh3RyCxcFBPdV2T4"];
+  [User registerSubclass];
+  [Tag registerSubclass];
   return YES;
 }
 

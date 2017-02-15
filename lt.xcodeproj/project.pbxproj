@@ -19,6 +19,7 @@
 		0059142B1E4DB1CD00375902 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 0059142A1E4DB1CD00375902 /* MBProgressHUD.m */; };
 		0059142F1E4DC76C00375902 /* LTInputInfoVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 0059142E1E4DC76C00375902 /* LTInputInfoVc.m */; };
 		009743D31E4CBF930042E6CD /* LTRegisterVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 009743D21E4CBF930042E6CD /* LTRegisterVc.m */; };
+		5C4418811E543A1D00D402AF /* LTSelectTagCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C4418801E543A1D00D402AF /* LTSelectTagCell.m */; };
 		5C47ED311E4C006500716D49 /* LTLoginNc.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C47ED301E4C006500716D49 /* LTLoginNc.m */; };
 		5C47ED341E4C073200716D49 /* LTVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C47ED331E4C073200716D49 /* LTVc.m */; };
 		5C47ED381E4C314200716D49 /* LTNc.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C47ED371E4C314200716D49 /* LTNc.m */; };
@@ -60,6 +61,9 @@
 		0059142E1E4DC76C00375902 /* LTInputInfoVc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTInputInfoVc.m; sourceTree = "<group>"; };
 		009743D11E4CBF930042E6CD /* LTRegisterVc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTRegisterVc.h; sourceTree = "<group>"; };
 		009743D21E4CBF930042E6CD /* LTRegisterVc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTRegisterVc.m; sourceTree = "<group>"; };
+		5C44187E1E54216A00D402AF /* Model.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Model.h; sourceTree = "<group>"; };
+		5C44187F1E543A1D00D402AF /* LTSelectTagCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTSelectTagCell.h; sourceTree = "<group>"; };
+		5C4418801E543A1D00D402AF /* LTSelectTagCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTSelectTagCell.m; sourceTree = "<group>"; };
 		5C47ED2F1E4C006500716D49 /* LTLoginNc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTLoginNc.h; sourceTree = "<group>"; };
 		5C47ED301E4C006500716D49 /* LTLoginNc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTLoginNc.m; sourceTree = "<group>"; };
 		5C47ED321E4C073200716D49 /* LTVc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTVc.h; sourceTree = "<group>"; };
@@ -205,6 +209,7 @@
 		5C49DB431E4AEB5B00E72541 /* models */ = {
 			isa = PBXGroup;
 			children = (
+				5C44187E1E54216A00D402AF /* Model.h */,
 				5C49DB491E4B03C300E72541 /* User.h */,
 				5C49DB4A1E4B03C300E72541 /* User.m */,
 				004D00441E5357E000FA1638 /* Tag.h */,
@@ -228,6 +233,8 @@
 		5C49DB451E4AEB6900E72541 /* views */ = {
 			isa = PBXGroup;
 			children = (
+				5C44187F1E543A1D00D402AF /* LTSelectTagCell.h */,
+				5C4418801E543A1D00D402AF /* LTSelectTagCell.m */,
 			);
 			name = views;
 			sourceTree = "<group>";
@@ -324,6 +331,7 @@
 				001FF6041E4E1625003B35A8 /* UIImageView+Extension.m in Sources */,
 				001FF6021E4E1625003B35A8 /* NSObject+Extension.m in Sources */,
 				004D00491E535E1100FA1638 /* LTSelectTagsVc.m in Sources */,
+				5C4418811E543A1D00D402AF /* LTSelectTagCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

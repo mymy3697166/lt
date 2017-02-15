@@ -9,5 +9,5 @@
 #import "User.h"
 
 @implementation User
-
++ (NSString *)parseClassName {return @"_User";}
 @end

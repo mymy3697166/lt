@@ -7,29 +7,30 @@
 //
 
 #import "Tag.h"
+#import "LTCommon.h"
 
 @implementation Tag
-- (NSString *)name {
-  return [self objectForKey:@"name"];
-}
-- (void)setName:(NSString *)name {
-  [self setObject:name forKey:@"name"];
-}
+@dynamic name;
+@dynamic icon;
+@dynamic color;
+//- (UIImage *)icon {
+//  AVFile *file = [self objectForKey:@"icon"];
+//  __block UIImage *img = [UIImage imageNamed:@"placeholder_image"];
+//  [file getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+//    img = [UIImage imageWithData:data];
+//  }];
+//  return img;
+//}
+//- (UIColor *)color {
+//  NSArray *colorArray = [self objectForKey:@"color"];
+//  return RGB([colorArray[0] integerValue], [colorArray[1] integerValue], [colorArray[2] integerValue]);
+//}
 
-- (instancetype)init {
-  self = [super initWithClassName:@"Tags"];
-  return self;
-}
-
-+ (void)fetchAllWithBlock:(void(^)(NSArray *data))block {
-  AVQuery *query = [AVQuery queryWithClassName:@"Tags"];
++ (void)findAllInBackgroundWithBlock:(void (^)(NSArray *))block {
+  AVQuery *query = [AVQuery queryWithClassName:[Tag parseClassName]];
+  query.cachePolicy = kAVCachePolicyCacheThenNetwork;
   [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-    NSMutableArray *tags = [NSMutableArray array];
-    [objects enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-      Tag *tag = (Tag *)obj;
-      [tags addObject:tag];
-    }];
-    block(tags);
+    block(objects);
   }];
 }
 @end

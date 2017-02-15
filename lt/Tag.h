@@ -8,8 +8,10 @@
 
 #import <AVOSCloud/AVOSCloud.h>
 
-@interface Tag : AVObject
+@interface Tag : AVObject<AVSubclassing>
 @property (strong, nonatomic)NSString *name;
+@property (strong, nonatomic)AVFile *icon;
+@property (strong, nonatomic)NSArray *color;
 
-+ (void)fetchAllWithBlock:(void(^)(NSArray *data))block;
++ (void)findAllInBackgroundWithBlock:(void(^)(NSArray *))block;
 @end
