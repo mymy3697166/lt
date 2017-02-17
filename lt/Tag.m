@@ -13,18 +13,6 @@
 @dynamic name;
 @dynamic icon;
 @dynamic color;
-//- (UIImage *)icon {
-//  AVFile *file = [self objectForKey:@"icon"];
-//  __block UIImage *img = [UIImage imageNamed:@"placeholder_image"];
-//  [file getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
-//    img = [UIImage imageWithData:data];
-//  }];
-//  return img;
-//}
-//- (UIColor *)color {
-//  NSArray *colorArray = [self objectForKey:@"color"];
-//  return RGB([colorArray[0] integerValue], [colorArray[1] integerValue], [colorArray[2] integerValue]);
-//}
 
 + (void)findAllInBackgroundWithBlock:(void (^)(NSArray *))block {
   AVQuery *query = [AVQuery queryWithClassName:[Tag parseClassName]];

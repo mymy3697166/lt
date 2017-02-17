@@ -21,6 +21,7 @@
   [AVOSCloud setApplicationId:@"TiBRiwG5v0EPnoW81FiMJsqV-gzGzoHsz" clientKey:@"NrCSA4FgWh3RyCxcFBPdV2T4"];
   [User registerSubclass];
   [Tag registerSubclass];
+  NSLog(@"%@", [User currentUser]);
   return YES;
 }
 

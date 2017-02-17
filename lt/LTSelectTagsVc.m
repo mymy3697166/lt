@@ -13,6 +13,7 @@
   __weak IBOutlet UICollectionView *cvTags;
   
   NSArray *dataSource;
+  NSMutableArray *selectedTags;
 }
 
 @end
@@ -21,6 +22,7 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
+  selectedTags = [NSMutableArray array];
   cvTags.allowsMultipleSelection = YES;
   [Tag findAllInBackgroundWithBlock:^(NSArray *tags) {
     dataSource = tags;
@@ -53,5 +55,33 @@
     [cell setData:dataSource[indexPath.row]];
     return cell;
   }
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+  if ([cvTags indexPathsForSelectedItems].count == 3) {
+    [Cm info:@"最多只能选择3个爱好"];
+    return;
+  }
+  [selectedTags removeAllObjects];
+  [[cvTags indexPathsForSelectedItems] enumerateObjectsUsingBlock:^(NSIndexPath *obj, NSUInteger idx, BOOL *stop) {
+    [selectedTags addObject:dataSource[obj.row]];
+  }];
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath {
+  [selectedTags removeAllObjects];
+  [[cvTags indexPathsForSelectedItems] enumerateObjectsUsingBlock:^(NSIndexPath *obj, NSUInteger idx, BOOL *stop) {
+    [selectedTags addObject:dataSource[obj.row]];
+  }];
+}
+
+- (IBAction)completeClick:(UIButton *)sender {
+  [[cvTags indexPathsForSelectedItems] enumerateObjectsUsingBlock:^(NSIndexPath *obj, NSUInteger idx, BOOL *stop) {
+    if (obj.section == 1) {
+      Tag *tag = dataSource[obj.row];
+      [U.tags addObject:tag];
+    }
+  }];
+  [U saveEventually];
 }
 @end

@@ -23,7 +23,7 @@
   
   NSString *gender;
   NSDate *dob;
-  NSString *avatar;
+  AVFile *avatar;
   NSInteger days;
 }
 
@@ -142,14 +142,13 @@
   NSData *data = [Cm compressAvatar:image];
   [Cm showLoading];
   NSString *fn = [NSString stringWithFormat:@"%@.jpg", [[NSDate date] toStringWithFormat:@"yyyyMMddhhmmssSSS"] ];
-  AVFile *file = [AVFile fileWithName:fn data:data];
-  [file saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+  avatar = [AVFile fileWithName:fn data:data];
+  [avatar saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
     [Cm hideLoading];
     if (error) {
       NSLog(@"%@", error);
       return;
     }
-    avatar = file.url;
     [btnAvatar setBackgroundImage:[UIImage imageWithData:data] forState:UIControlStateNormal];
   }];
   [ipc dismissViewControllerAnimated:YES completion:nil];
@@ -173,5 +172,30 @@
 
 - (IBAction)bgClick:(UITapGestureRecognizer *)sender {
   [tfNickname resignFirstResponder];
+}
+
+- (IBAction)nextClick:(UIButton *)sender {
+  if (avatar == nil) {
+    [Cm info:@"请选择头像"];
+    return;
+  }
+  if ([tfNickname.text isEqualToString:@""]) {
+    [Cm info:@"请输入昵称"];
+    return;
+  }
+  if (gender == nil) {
+    [Cm info:@"请选择性别"];
+    return;
+  }
+  if (dob == nil) {
+    [Cm info:@"请选择出生日期"];
+    return;
+  }
+  U.dob = dob;
+  U.avatar = avatar;
+  U.gender = gender;
+  U.nickName = tfNickname.text;
+  [U saveEventually];
+  [self performSegueWithIdentifier:@"inputinfo_selecttags" sender:nil];
 }
 @end

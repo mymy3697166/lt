@@ -48,4 +48,16 @@
   [tfUid resignFirstResponder];
   [tfPwd resignFirstResponder];
 }
+
+- (IBAction)loginClick:(UIButton *)sender {
+  if ([tfUid.text isEqualToString:@""]) {
+    [Cm info:@"请输入手机号"];
+    return;
+  }
+  if ([tfPwd.text isEqualToString:@""]) {
+    [Cm info:@"请输入密码"];
+    return;
+  }
+  [User loginWithUid:tfUid.text andPwd:tfPwd.text];
+}
 @end

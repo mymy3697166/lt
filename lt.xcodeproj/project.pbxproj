@@ -34,6 +34,7 @@
 		5C49DB381E4AE9A400E72541 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C49DB371E4AE9A400E72541 /* libsqlite3.tbd */; };
 		5C49DB421E4AEB1500E72541 /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C49DB411E4AEB1500E72541 /* libicucore.tbd */; };
 		5C49DB4B1E4B03C300E72541 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C49DB4A1E4B03C300E72541 /* User.m */; };
+		5CDCBCCD1E554B260053FDE8 /* UserTags.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CDCBCCC1E554B260053FDE8 /* UserTags.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -87,6 +88,8 @@
 		5C49DB411E4AEB1500E72541 /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
 		5C49DB491E4B03C300E72541 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		5C49DB4A1E4B03C300E72541 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		5CDCBCCB1E554B260053FDE8 /* UserTags.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserTags.h; sourceTree = "<group>"; };
+		5CDCBCCC1E554B260053FDE8 /* UserTags.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserTags.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -214,6 +217,8 @@
 				5C49DB4A1E4B03C300E72541 /* User.m */,
 				004D00441E5357E000FA1638 /* Tag.h */,
 				004D00451E5357E000FA1638 /* Tag.m */,
+				5CDCBCCB1E554B260053FDE8 /* UserTags.h */,
+				5CDCBCCC1E554B260053FDE8 /* UserTags.m */,
 			);
 			name = models;
 			sourceTree = "<group>";
@@ -332,6 +337,7 @@
 				001FF6021E4E1625003B35A8 /* NSObject+Extension.m in Sources */,
 				004D00491E535E1100FA1638 /* LTSelectTagsVc.m in Sources */,
 				5C4418811E543A1D00D402AF /* LTSelectTagCell.m in Sources */,
+				5CDCBCCD1E554B260053FDE8 /* UserTags.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
