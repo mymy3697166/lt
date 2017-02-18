@@ -37,6 +37,8 @@
   btnAvatar.layer.cornerRadius = btnAvatar.bounds.size.width / 2;
   
   days = 31;
+  // 测试
+  //[self performSegueWithIdentifier:@"inputinfo_selecttags" sender:nil];
 }
 
 - (void)viewWillAppear:(BOOL)animated {

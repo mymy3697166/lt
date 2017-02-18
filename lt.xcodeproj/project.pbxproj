@@ -14,6 +14,12 @@
 		001FF6021E4E1625003B35A8 /* NSObject+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 001FF5F91E4E1625003B35A8 /* NSObject+Extension.m */; };
 		001FF6031E4E1625003B35A8 /* NSString+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 001FF5FB1E4E1625003B35A8 /* NSString+Extension.m */; };
 		001FF6041E4E1625003B35A8 /* UIImageView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 001FF5FD1E4E1625003B35A8 /* UIImageView+Extension.m */; };
+		0034B94E1E5734A6000E2B47 /* LTForgetPwdVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 0034B94D1E5734A6000E2B47 /* LTForgetPwdVc.m */; };
+		0034B9521E575392000E2B47 /* LTDiscoverVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 0034B9511E575392000E2B47 /* LTDiscoverVc.m */; };
+		004A03A81E588BA3007DD755 /* LTBannerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 004A03A61E588BA3007DD755 /* LTBannerCell.m */; };
+		004A03A91E588BA3007DD755 /* LTBannerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 004A03A71E588BA3007DD755 /* LTBannerCell.xib */; };
+		004A03AC1E58913C007DD755 /* Guide.m in Sources */ = {isa = PBXBuildFile; fileRef = 004A03AB1E58913C007DD755 /* Guide.m */; };
+		004A03AF1E58A654007DD755 /* LTBannerV.m in Sources */ = {isa = PBXBuildFile; fileRef = 004A03AE1E58A654007DD755 /* LTBannerV.m */; };
 		004D00461E5357E000FA1638 /* Tag.m in Sources */ = {isa = PBXBuildFile; fileRef = 004D00451E5357E000FA1638 /* Tag.m */; };
 		004D00491E535E1100FA1638 /* LTSelectTagsVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 004D00481E535E1100FA1638 /* LTSelectTagsVc.m */; };
 		0059142B1E4DB1CD00375902 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 0059142A1E4DB1CD00375902 /* MBProgressHUD.m */; };
@@ -34,7 +40,6 @@
 		5C49DB381E4AE9A400E72541 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C49DB371E4AE9A400E72541 /* libsqlite3.tbd */; };
 		5C49DB421E4AEB1500E72541 /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C49DB411E4AEB1500E72541 /* libicucore.tbd */; };
 		5C49DB4B1E4B03C300E72541 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C49DB4A1E4B03C300E72541 /* User.m */; };
-		5CDCBCCD1E554B260053FDE8 /* UserTags.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CDCBCCC1E554B260053FDE8 /* UserTags.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +57,17 @@
 		001FF5FB1E4E1625003B35A8 /* NSString+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Extension.m"; sourceTree = "<group>"; };
 		001FF5FC1E4E1625003B35A8 /* UIImageView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+Extension.h"; sourceTree = "<group>"; };
 		001FF5FD1E4E1625003B35A8 /* UIImageView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+Extension.m"; sourceTree = "<group>"; };
+		0034B94C1E5734A6000E2B47 /* LTForgetPwdVc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTForgetPwdVc.h; sourceTree = "<group>"; };
+		0034B94D1E5734A6000E2B47 /* LTForgetPwdVc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTForgetPwdVc.m; sourceTree = "<group>"; };
+		0034B9501E575392000E2B47 /* LTDiscoverVc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTDiscoverVc.h; sourceTree = "<group>"; };
+		0034B9511E575392000E2B47 /* LTDiscoverVc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTDiscoverVc.m; sourceTree = "<group>"; };
+		004A03A51E588BA3007DD755 /* LTBannerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTBannerCell.h; sourceTree = "<group>"; };
+		004A03A61E588BA3007DD755 /* LTBannerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTBannerCell.m; sourceTree = "<group>"; };
+		004A03A71E588BA3007DD755 /* LTBannerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LTBannerCell.xib; sourceTree = "<group>"; };
+		004A03AA1E58913C007DD755 /* Guide.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Guide.h; sourceTree = "<group>"; };
+		004A03AB1E58913C007DD755 /* Guide.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Guide.m; sourceTree = "<group>"; };
+		004A03AD1E58A654007DD755 /* LTBannerV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTBannerV.h; sourceTree = "<group>"; };
+		004A03AE1E58A654007DD755 /* LTBannerV.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTBannerV.m; sourceTree = "<group>"; };
 		004D00441E5357E000FA1638 /* Tag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tag.h; sourceTree = "<group>"; };
 		004D00451E5357E000FA1638 /* Tag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tag.m; sourceTree = "<group>"; };
 		004D00471E535E1100FA1638 /* LTSelectTagsVc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTSelectTagsVc.h; sourceTree = "<group>"; };
@@ -88,8 +104,6 @@
 		5C49DB411E4AEB1500E72541 /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
 		5C49DB491E4B03C300E72541 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		5C49DB4A1E4B03C300E72541 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
-		5CDCBCCB1E554B260053FDE8 /* UserTags.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserTags.h; sourceTree = "<group>"; };
-		5CDCBCCC1E554B260053FDE8 /* UserTags.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserTags.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +141,15 @@
 			name = utils;
 			sourceTree = "<group>";
 		};
+		0034B94F1E57535D000E2B47 /* discover */ = {
+			isa = PBXGroup;
+			children = (
+				0034B9501E575392000E2B47 /* LTDiscoverVc.h */,
+				0034B9511E575392000E2B47 /* LTDiscoverVc.m */,
+			);
+			name = discover;
+			sourceTree = "<group>";
+		};
 		5C47ED351E4C078400716D49 /* login */ = {
 			isa = PBXGroup;
 			children = (
@@ -140,6 +163,8 @@
 				0059142E1E4DC76C00375902 /* LTInputInfoVc.m */,
 				004D00471E535E1100FA1638 /* LTSelectTagsVc.h */,
 				004D00481E535E1100FA1638 /* LTSelectTagsVc.m */,
+				0034B94C1E5734A6000E2B47 /* LTForgetPwdVc.h */,
+				0034B94D1E5734A6000E2B47 /* LTForgetPwdVc.m */,
 			);
 			name = login;
 			sourceTree = "<group>";
@@ -217,8 +242,8 @@
 				5C49DB4A1E4B03C300E72541 /* User.m */,
 				004D00441E5357E000FA1638 /* Tag.h */,
 				004D00451E5357E000FA1638 /* Tag.m */,
-				5CDCBCCB1E554B260053FDE8 /* UserTags.h */,
-				5CDCBCCC1E554B260053FDE8 /* UserTags.m */,
+				004A03AA1E58913C007DD755 /* Guide.h */,
+				004A03AB1E58913C007DD755 /* Guide.m */,
 			);
 			name = models;
 			sourceTree = "<group>";
@@ -231,6 +256,7 @@
 				5C47ED321E4C073200716D49 /* LTVc.h */,
 				5C47ED331E4C073200716D49 /* LTVc.m */,
 				5C47ED351E4C078400716D49 /* login */,
+				0034B94F1E57535D000E2B47 /* discover */,
 			);
 			name = controllers;
 			sourceTree = "<group>";
@@ -240,6 +266,11 @@
 			children = (
 				5C44187F1E543A1D00D402AF /* LTSelectTagCell.h */,
 				5C4418801E543A1D00D402AF /* LTSelectTagCell.m */,
+				004A03A51E588BA3007DD755 /* LTBannerCell.h */,
+				004A03A61E588BA3007DD755 /* LTBannerCell.m */,
+				004A03A71E588BA3007DD755 /* LTBannerCell.xib */,
+				004A03AD1E58A654007DD755 /* LTBannerV.h */,
+				004A03AE1E58A654007DD755 /* LTBannerV.m */,
 			);
 			name = views;
 			sourceTree = "<group>";
@@ -303,6 +334,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				004A03A91E588BA3007DD755 /* LTBannerCell.xib in Resources */,
 				5C49DB2A1E4AE5E600E72541 /* LaunchScreen.storyboard in Resources */,
 				5C49DB271E4AE5E600E72541 /* Assets.xcassets in Resources */,
 				5C49DB251E4AE5E600E72541 /* Main.storyboard in Resources */,
@@ -317,6 +349,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5C47ED3B1E4C32E300716D49 /* LTLoginVc.m in Sources */,
+				0034B9521E575392000E2B47 /* LTDiscoverVc.m in Sources */,
 				5C49DB4B1E4B03C300E72541 /* User.m in Sources */,
 				5C47ED381E4C314200716D49 /* LTNc.m in Sources */,
 				5C49DB221E4AE5E600E72541 /* ViewController.m in Sources */,
@@ -327,17 +360,20 @@
 				001FF6001E4E1625003B35A8 /* NSData+Extension.m in Sources */,
 				5C47ED341E4C073200716D49 /* LTVc.m in Sources */,
 				5C49DB1F1E4AE5E600E72541 /* AppDelegate.m in Sources */,
+				004A03AF1E58A654007DD755 /* LTBannerV.m in Sources */,
 				001FF6011E4E1625003B35A8 /* NSDate+Extension.m in Sources */,
 				001FF6031E4E1625003B35A8 /* NSString+Extension.m in Sources */,
+				004A03AC1E58913C007DD755 /* Guide.m in Sources */,
 				0059142B1E4DB1CD00375902 /* MBProgressHUD.m in Sources */,
+				004A03A81E588BA3007DD755 /* LTBannerCell.m in Sources */,
 				5C47ED311E4C006500716D49 /* LTLoginNc.m in Sources */,
 				004D00461E5357E000FA1638 /* Tag.m in Sources */,
 				5C49DB1C1E4AE5E600E72541 /* main.m in Sources */,
 				001FF6041E4E1625003B35A8 /* UIImageView+Extension.m in Sources */,
 				001FF6021E4E1625003B35A8 /* NSObject+Extension.m in Sources */,
+				0034B94E1E5734A6000E2B47 /* LTForgetPwdVc.m in Sources */,
 				004D00491E535E1100FA1638 /* LTSelectTagsVc.m in Sources */,
 				5C4418811E543A1D00D402AF /* LTSelectTagCell.m in Sources */,
-				5CDCBCCD1E554B260053FDE8 /* UserTags.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

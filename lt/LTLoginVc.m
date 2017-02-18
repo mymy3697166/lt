@@ -32,6 +32,8 @@
   tfPwd.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"密码" attributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
   // 登录按钮圆角
   btnLogin.layer.cornerRadius = 20;
+  // 增加登录成功通知监听
+  [N addObserver:self selector:@selector(loginSuccess) name:@"N_LOGIN_SUCCESS" object:nil];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -59,5 +61,9 @@
     return;
   }
   [User loginWithUid:tfUid.text andPwd:tfPwd.text];
+}
+
+- (void)loginSuccess {
+  [self.navigationController dismissViewControllerAnimated:YES completion:nil];
 }
 @end

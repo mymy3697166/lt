@@ -44,7 +44,7 @@
       return;
     }
     [Cm hideLoading];
-    block();
+    dispatch_sync(dispatch_get_main_queue(), ^{block();});
   }];
 }
 + (void)loginWithUid:(NSString *)uid andPwd:(NSString *)pwd {

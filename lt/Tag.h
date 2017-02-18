@@ -8,7 +8,7 @@
 
 #import <AVOSCloud/AVOSCloud.h>
 
-@interface Tag : AVObject<AVSubclassing>
+@interface Tag : AVObject <AVSubclassing>
 @property (strong, nonatomic)NSString *name;
 @property (strong, nonatomic)AVFile *icon;
 @property (strong, nonatomic)NSArray *color;

@@ -22,10 +22,13 @@
 }
 
 - (void)setData:(Tag *)tag {
-  [tag.icon getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
-    [btnIcon setImage:[UIImage imageWithData:data] forState:UIControlStateNormal];
-  }];
-  
+  if (tag.icon.isDataAvailable) {
+    [btnIcon setImage:[UIImage imageWithData:tag.icon.getData] forState:UIControlStateNormal];
+  } else {
+    [tag.icon getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+      [btnIcon setImage:[UIImage imageWithData:data] forState:UIControlStateNormal];
+    }];
+  }
   labName.text = tag.name;
   
   int r = [tag.color[0] intValue];

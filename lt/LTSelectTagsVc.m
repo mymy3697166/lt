@@ -11,6 +11,7 @@
 
 @interface LTSelectTagsVc () <UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout> {
   __weak IBOutlet UICollectionView *cvTags;
+  __weak IBOutlet UIButton *btnComplete;
   
   NSArray *dataSource;
   NSMutableArray *selectedTags;
@@ -24,6 +25,7 @@
   [super viewDidLoad];
   selectedTags = [NSMutableArray array];
   cvTags.allowsMultipleSelection = YES;
+  btnComplete.layer.cornerRadius = 20;
   [Tag findAllInBackgroundWithBlock:^(NSArray *tags) {
     dataSource = tags;
     [cvTags reloadData];
@@ -58,8 +60,9 @@
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-  if ([cvTags indexPathsForSelectedItems].count == 3) {
+  if ([cvTags indexPathsForSelectedItems].count > 3) {
     [Cm info:@"最多只能选择3个爱好"];
+    [cvTags deselectItemAtIndexPath:indexPath animated:NO];
     return;
   }
   [selectedTags removeAllObjects];
@@ -76,12 +79,11 @@
 }
 
 - (IBAction)completeClick:(UIButton *)sender {
-  [[cvTags indexPathsForSelectedItems] enumerateObjectsUsingBlock:^(NSIndexPath *obj, NSUInteger idx, BOOL *stop) {
-    if (obj.section == 1) {
-      Tag *tag = dataSource[obj.row];
-      [U.tags addObject:tag];
-    }
+  [selectedTags enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+    [U.tags addObject:obj];
   }];
   [U saveEventually];
+  [N postNotificationName:@"N_LOGIN_SUCCESS" object:nil];
+  [self.navigationController dismissViewControllerAnimated:YES completion:nil];
 }
 @end

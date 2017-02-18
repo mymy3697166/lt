@@ -17,10 +17,6 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-  NSLog(@"%@", [User currentUser]);
-  [AVOSCloud requestSmsCodeWithPhoneNumber:@"15010905653" callback:^(BOOL succeeded, NSError *error) {
-    NSLog(@"%@", error);
-  }];
 }
 
 
