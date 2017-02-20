@@ -10,5 +10,5 @@
 #import "Guide.h"
 
 @interface LTBannerCell : UITableViewCell <UIScrollViewDelegate>
-- (void)setData:(Guide *)guide;
+- (void)setData:(NSArray *)data;
 @end

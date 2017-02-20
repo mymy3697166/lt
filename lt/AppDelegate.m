@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import <AVOSCloud/AVOSCloud.h>
+#import "LTCommon.h"
 #import "Model.h"
 
 @interface AppDelegate ()
@@ -21,6 +22,7 @@
   [AVOSCloud setApplicationId:@"TiBRiwG5v0EPnoW81FiMJsqV-gzGzoHsz" clientKey:@"NrCSA4FgWh3RyCxcFBPdV2T4"];
   [User registerSubclass];
   [Tag registerSubclass];
+  [Guide registerSubclass];
   return YES;
 }
 

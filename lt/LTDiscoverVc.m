@@ -8,6 +8,7 @@
 
 #import "LTDiscoverVc.h"
 #import "LTBannerCell.h"
+#import "LTGuideCell.h"
 
 @interface LTDiscoverVc () <UITableViewDelegate, UITableViewDataSource> {
   
@@ -27,6 +28,14 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
+  
+  // 测试数据
+  Guide *guide = [Guide object];
+  guide.author = U;
+  guide.title = @"黄三一日游";
+  guide.content = @"明代旅行家徐霞客曾经说过：五岳归来不看山，黄山归来不看岳。这应该是对黄山的最高评价了。文中照片大多用手机拍摄，未经过任何后期加工，和实景相比差了十万八千里。";
+  guide.cover = [AVFile fileWithURL:@"https://dn-tibriwg5.qbox.me/7cbd789da18633e31cba.jpg"];
+  guides = @[guide, guide];
 }
 
 - (IBAction)tabGuideClick:(UIButton *)sender {
@@ -62,19 +71,25 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
   if ([tableView isEqual:tvGuide]) {
     if (section == 0) return 0.0001;
-    else return 16;
-  } else return 16;
+    else return 4;
+  } else return 4;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+  if ([tableView isEqual:tvGuide]) {
+    if (section == 0) return 4;
+    else return 4;
+  } else return 4;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
   if ([tableView isEqual:tvGuide]) {
     if (indexPath.section == 0) return tableView.bounds.size.width / 2;
-    else return 30;
+    else return 120;
   } else return 30;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-  
   if ([tableView isEqual:tvGuide]) {
     if (indexPath.section == 0) {
       LTBannerCell *cell = [tableView dequeueReusableCellWithIdentifier:@"LTBannerCell"];
@@ -83,7 +98,14 @@
         [cell setData:nil];
       }
       return cell;
-    } else return [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    } else {
+      LTGuideCell *cell = [tableView dequeueReusableCellWithIdentifier:@"LTGuideCell"];
+      if (cell == nil) {
+        cell = (LTGuideCell *)[[NSBundle mainBundle] loadNibNamed:@"LTGuideCell" owner:nil options:nil][0];
+        [cell setData:guides[indexPath.row]];
+      }
+      return cell;
+    }
   } else return [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
 }
 @end

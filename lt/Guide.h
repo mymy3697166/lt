@@ -17,4 +17,5 @@
 @property (strong, nonatomic)AVRelation *tags;
 @property (assign, nonatomic)NSInteger browse_times;
 @property (assign, nonatomic)NSInteger comment_times;
+@property (assign, nonatomic)NSInteger status;
 @end

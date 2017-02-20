@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Model.h"
 
 @interface LTGuideCell : UITableViewCell
-
+- (void)setData:(Guide *)data;
 @end

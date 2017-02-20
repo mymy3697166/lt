@@ -16,4 +16,5 @@
 @dynamic tags;
 @dynamic browse_times;
 @dynamic comment_times;
+@dynamic status;
 @end

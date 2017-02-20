@@ -8,3 +8,4 @@
 
 #import "User.h"
 #import "Tag.h"
+#import "Guide.h"
