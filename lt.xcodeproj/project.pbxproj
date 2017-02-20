@@ -19,7 +19,6 @@
 		004A03A81E588BA3007DD755 /* LTBannerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 004A03A61E588BA3007DD755 /* LTBannerCell.m */; };
 		004A03A91E588BA3007DD755 /* LTBannerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 004A03A71E588BA3007DD755 /* LTBannerCell.xib */; };
 		004A03AC1E58913C007DD755 /* Guide.m in Sources */ = {isa = PBXBuildFile; fileRef = 004A03AB1E58913C007DD755 /* Guide.m */; };
-		004A03AF1E58A654007DD755 /* LTBannerV.m in Sources */ = {isa = PBXBuildFile; fileRef = 004A03AE1E58A654007DD755 /* LTBannerV.m */; };
 		004D00461E5357E000FA1638 /* Tag.m in Sources */ = {isa = PBXBuildFile; fileRef = 004D00451E5357E000FA1638 /* Tag.m */; };
 		004D00491E535E1100FA1638 /* LTSelectTagsVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 004D00481E535E1100FA1638 /* LTSelectTagsVc.m */; };
 		0059142B1E4DB1CD00375902 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 0059142A1E4DB1CD00375902 /* MBProgressHUD.m */; };
@@ -40,6 +39,8 @@
 		5C49DB381E4AE9A400E72541 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C49DB371E4AE9A400E72541 /* libsqlite3.tbd */; };
 		5C49DB421E4AEB1500E72541 /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C49DB411E4AEB1500E72541 /* libicucore.tbd */; };
 		5C49DB4B1E4B03C300E72541 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C49DB4A1E4B03C300E72541 /* User.m */; };
+		5C4C064A1E5AE2EB0075FE69 /* LTGuideCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C4C06481E5AE2EB0075FE69 /* LTGuideCell.m */; };
+		5C4C064B1E5AE2EB0075FE69 /* LTGuideCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C4C06491E5AE2EB0075FE69 /* LTGuideCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,8 +67,6 @@
 		004A03A71E588BA3007DD755 /* LTBannerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LTBannerCell.xib; sourceTree = "<group>"; };
 		004A03AA1E58913C007DD755 /* Guide.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Guide.h; sourceTree = "<group>"; };
 		004A03AB1E58913C007DD755 /* Guide.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Guide.m; sourceTree = "<group>"; };
-		004A03AD1E58A654007DD755 /* LTBannerV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTBannerV.h; sourceTree = "<group>"; };
-		004A03AE1E58A654007DD755 /* LTBannerV.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTBannerV.m; sourceTree = "<group>"; };
 		004D00441E5357E000FA1638 /* Tag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tag.h; sourceTree = "<group>"; };
 		004D00451E5357E000FA1638 /* Tag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tag.m; sourceTree = "<group>"; };
 		004D00471E535E1100FA1638 /* LTSelectTagsVc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTSelectTagsVc.h; sourceTree = "<group>"; };
@@ -104,6 +103,9 @@
 		5C49DB411E4AEB1500E72541 /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
 		5C49DB491E4B03C300E72541 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		5C49DB4A1E4B03C300E72541 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		5C4C06471E5AE2EB0075FE69 /* LTGuideCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTGuideCell.h; sourceTree = "<group>"; };
+		5C4C06481E5AE2EB0075FE69 /* LTGuideCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTGuideCell.m; sourceTree = "<group>"; };
+		5C4C06491E5AE2EB0075FE69 /* LTGuideCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LTGuideCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -269,8 +271,9 @@
 				004A03A51E588BA3007DD755 /* LTBannerCell.h */,
 				004A03A61E588BA3007DD755 /* LTBannerCell.m */,
 				004A03A71E588BA3007DD755 /* LTBannerCell.xib */,
-				004A03AD1E58A654007DD755 /* LTBannerV.h */,
-				004A03AE1E58A654007DD755 /* LTBannerV.m */,
+				5C4C06471E5AE2EB0075FE69 /* LTGuideCell.h */,
+				5C4C06481E5AE2EB0075FE69 /* LTGuideCell.m */,
+				5C4C06491E5AE2EB0075FE69 /* LTGuideCell.xib */,
 			);
 			name = views;
 			sourceTree = "<group>";
@@ -334,6 +337,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C4C064B1E5AE2EB0075FE69 /* LTGuideCell.xib in Resources */,
 				004A03A91E588BA3007DD755 /* LTBannerCell.xib in Resources */,
 				5C49DB2A1E4AE5E600E72541 /* LaunchScreen.storyboard in Resources */,
 				5C49DB271E4AE5E600E72541 /* Assets.xcassets in Resources */,
@@ -360,7 +364,6 @@
 				001FF6001E4E1625003B35A8 /* NSData+Extension.m in Sources */,
 				5C47ED341E4C073200716D49 /* LTVc.m in Sources */,
 				5C49DB1F1E4AE5E600E72541 /* AppDelegate.m in Sources */,
-				004A03AF1E58A654007DD755 /* LTBannerV.m in Sources */,
 				001FF6011E4E1625003B35A8 /* NSDate+Extension.m in Sources */,
 				001FF6031E4E1625003B35A8 /* NSString+Extension.m in Sources */,
 				004A03AC1E58913C007DD755 /* Guide.m in Sources */,
@@ -369,6 +372,7 @@
 				5C47ED311E4C006500716D49 /* LTLoginNc.m in Sources */,
 				004D00461E5357E000FA1638 /* Tag.m in Sources */,
 				5C49DB1C1E4AE5E600E72541 /* main.m in Sources */,
+				5C4C064A1E5AE2EB0075FE69 /* LTGuideCell.m in Sources */,
 				001FF6041E4E1625003B35A8 /* UIImageView+Extension.m in Sources */,
 				001FF6021E4E1625003B35A8 /* NSObject+Extension.m in Sources */,
 				0034B94E1E5734A6000E2B47 /* LTForgetPwdVc.m in Sources */,

@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "Guide.h"
 
-@interface LTBannerCell : UITableViewCell <UIGestureRecognizerDelegate>
+@interface LTBannerCell : UITableViewCell <UIScrollViewDelegate>
 - (void)setData:(Guide *)guide;
 @end

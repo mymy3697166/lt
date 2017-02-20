@@ -59,6 +59,13 @@
   } else return travels.count;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+  if ([tableView isEqual:tvGuide]) {
+    if (section == 0) return 0.0001;
+    else return 16;
+  } else return 16;
+}
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
   if ([tableView isEqual:tvGuide]) {
     if (indexPath.section == 0) return tableView.bounds.size.width / 2;
