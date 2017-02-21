@@ -32,9 +32,12 @@
   // 测试数据
   Guide *guide = [Guide object];
   guide.author = U;
-  guide.title = @"黄三一日游";
-  guide.content = @"明代旅行家徐霞客曾经说过：五岳归来不看山，黄山归来不看岳。这应该是对黄山的最高评价了。文中照片大多用手机拍摄，未经过任何后期加工，和实景相比差了十万八千里。";
+  guide.title = @"黄山一日游";
+  guide.content = @"明代旅行家徐霞客曾经说过：五岳归来不看山，黄山归来不看岳。[img http://www.baidu.com/2989sfwef89se89we8.jpg]这应该是对黄山的最高评价了。文中照片大多用手机拍摄，未经过任何后期加工，和实景相比差了十万八千里。";
   guide.cover = [AVFile fileWithURL:@"https://dn-tibriwg5.qbox.me/7cbd789da18633e31cba.jpg"];
+  Tag *t1 = [Tag objectWithObjectId:@"3658a4581dda2f6025d82d7453"];
+  [t1 fetch];
+  [guide.tags addObject:t1];
   guides = @[guide, guide];
 }
 
@@ -71,15 +74,21 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
   if ([tableView isEqual:tvGuide]) {
     if (section == 0) return 0.0001;
-    else return 4;
-  } else return 4;
+    else return 8;
+  } else return 8;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
   if ([tableView isEqual:tvGuide]) {
-    if (section == 0) return 4;
-    else return 4;
+    if (section == 0) return 0.0001;
+    else return 16;
   } else return 4;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
+  UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.bounds.size.width, 16)];
+  view.backgroundColor = [UIColor whiteColor];
+  return view;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -99,13 +108,35 @@
       }
       return cell;
     } else {
-      LTGuideCell *cell = [tableView dequeueReusableCellWithIdentifier:@"LTGuideCell"];
+      static NSString *guideCell = @"LTGuideCell";
+      LTGuideCell *cell = [tableView dequeueReusableCellWithIdentifier:guideCell];
       if (cell == nil) {
-        cell = (LTGuideCell *)[[NSBundle mainBundle] loadNibNamed:@"LTGuideCell" owner:nil options:nil][0];
+        // 注册tableview重用cell
+        UINib *guideNib = [UINib nibWithNibName:guideCell bundle:nil];
+        [tvGuide registerNib:guideNib forCellReuseIdentifier:guideCell];
+        cell = [tableView dequeueReusableCellWithIdentifier:guideCell];
         [cell setData:guides[indexPath.row]];
       }
       return cell;
     }
   } else return [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+  if ([tableView isEqual:tvGuide]) {
+    if (indexPath.section > 0) {
+      Guide *guide = guides[indexPath.row];
+      [self performSegueWithIdentifier:@"discover_guide" sender:guide];
+    }
+  } else {
+    
+  }
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+  if ([segue.identifier isEqualToString:@"discover_guide"]) {
+    Guide *guide = sender;
+    
+  }
 }
 @end

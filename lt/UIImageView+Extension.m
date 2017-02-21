@@ -9,17 +9,10 @@
 #import "UIImageView+Extension.h"
 
 @implementation UIImageView(Extension)
-- (void)loadURL:(NSString *)url {
-  UIView *dView = [[UIView alloc] initWithFrame:self.frame];
-  dView.backgroundColor = [UIColor lightGrayColor];
-  [self.superview addSubview:dView];
-  [Cm cacheImage:url completion:^(UIImage *image) {
-    self.image = image;
-    [UIView animateWithDuration:0.1 animations:^{
-      dView.alpha = 0;
-    } completion:^(BOOL finished) {
-      [dView removeFromSuperview];
-    }];
+- (void)loadAVFile:(AVFile *)file {
+  if ([file isDataAvailable]) self.image = [UIImage imageWithData:[file getData]];
+  else [file getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+    self.image = [UIImage imageWithData:data];
   }];
 }
 

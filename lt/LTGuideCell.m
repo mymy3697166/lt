@@ -7,6 +7,7 @@
 //
 
 #import "LTGuideCell.h"
+#import "LTCommon.h"
 
 @implementation LTGuideCell {
   __weak IBOutlet UIImageView *ivCover;
@@ -19,6 +20,7 @@
 
 - (void)awakeFromNib {
   [super awakeFromNib];
+  self.selectionStyle = UITableViewCellSelectionStyleNone;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -26,21 +28,25 @@
 }
 
 - (void)setData:(Guide *)data {
-//  NSRegularExpression *reg = [NSRegularExpression regularExpressionWithPattern:@"\[img [^\[\]]+\]" options:NSRegularExpressionCaseInsensitive error:nil];
-//  NSRange range = NSMakeRange(0, [data.content lengthOfBytesUsingEncoding:kCFStringEncodingUTF8]);
-//  NSTextCheckingResult *first = [reg matchesInString:data.content options:0 range:range][0];
-//  AVFile *image = [AVFile fileWithURL:[[first.replacementString substringFromIndex:5] substringToIndex:first.replacementString.length - 2]];
-  if (data.cover.isDataAvailable) ivCover.image = [UIImage imageWithData:[data.cover getData]];
-  else {
-    [data.cover getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
-      ivCover.image = [UIImage imageWithData:data];
-    }];
-  }
-  NSMutableAttributedString *maContent = [[NSMutableAttributedString alloc] initWithString:data.content];
+  NSLog(@"%@", data);
+  [ivCover loadAVFile:data.cover];
+  
+  labTitle.text = data.title;
+  
+  NSRegularExpression *reg = [NSRegularExpression regularExpressionWithPattern:@"\\[img [^\\[\\]]+\\]" options:NSRegularExpressionCaseInsensitive error:nil];
+  NSRange range = NSMakeRange(0, data.content.length);
+  NSString *content = [reg stringByReplacingMatchesInString:data.content options:0 range:range withTemplate:@""];
+  NSMutableAttributedString *maContent = [[NSMutableAttributedString alloc] initWithString:content];
   NSMutableParagraphStyle * ps = [[NSMutableParagraphStyle alloc] init];
   ps.lineSpacing = 4;
   ps.lineBreakMode = NSLineBreakByTruncatingTail;
-  [maContent addAttribute:NSParagraphStyleAttributeName value:ps range:NSMakeRange(0, data.content.length)];
+  [maContent addAttribute:NSParagraphStyleAttributeName value:ps range:NSMakeRange(0, content.length)];
   labContent.attributedText = maContent;
+  
+  NSArray *tags = [data.tags.query findObjects];
+  [tags enumerateObjectsUsingBlock:^(Tag *item, NSUInteger idx, BOOL *stop) {
+    if (idx == 0) [labTags.text stringByAppendingString:item.name];
+    else [labTags.text stringByAppendingString:[NSString stringWithFormat:@" %@", item.name]];
+  }];
 }
 @end

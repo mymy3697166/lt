@@ -11,6 +11,6 @@
 #import "LTCommon.h"
 
 @interface UIImageView(Extension)
-- (void)loadURL:(NSString *)url;
+- (void)loadAVFile:(AVFile *)file;
 - (void)tintColor:(UIColor *)color;
 @end
