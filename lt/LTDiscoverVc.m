@@ -9,6 +9,7 @@
 #import "LTDiscoverVc.h"
 #import "LTBannerCell.h"
 #import "LTGuideCell.h"
+#import "LTTest.h"
 
 @interface LTDiscoverVc () <UITableViewDelegate, UITableViewDataSource> {
   
@@ -16,6 +17,8 @@
   __weak IBOutlet UIButton *btnTabTravels;
   __weak IBOutlet NSLayoutConstraint *lcSelectedLeft;
   __weak IBOutlet UITableView *tvGuide;
+  
+  UIAlertController *alert;
   
   NSArray *banners;
   NSArray *guides;
@@ -28,17 +31,26 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
+  guides = [LTTest getGuides];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+  [super viewDidAppear:animated];
   
-  // 测试数据
-  Guide *guide = [Guide object];
-  guide.author = U;
-  guide.title = @"黄山一日游";
-  guide.content = @"明代旅行家徐霞客曾经说过：五岳归来不看山，黄山归来不看岳。[img http://www.baidu.com/2989sfwef89se89we8.jpg]这应该是对黄山的最高评价了。文中照片大多用手机拍摄，未经过任何后期加工，和实景相比差了十万八千里。";
-  guide.cover = [AVFile fileWithURL:@"https://dn-tibriwg5.qbox.me/7cbd789da18633e31cba.jpg"];
-  Tag *t1 = [Tag objectWithObjectId:@"3658a4581dda2f6025d82d7453"];
-  [t1 fetch];
-  [guide.tags addObject:t1];
-  guides = @[guide, guide];
+  alert = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+  [alert addAction:[UIAlertAction actionWithTitle:@"发表攻略" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+    [self performSegueWithIdentifier:@"discover_publishguide" sender:nil];
+  }]];
+  [alert addAction:[UIAlertAction actionWithTitle:@"发表游记" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+    
+  }]];
+  [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+    [alert dismissViewControllerAnimated:YES completion:nil];
+  }]];
+}
+
+- (IBAction)publishClick:(UIBarButtonItem *)sender {
+  [self presentViewController:alert animated:YES completion:nil];
 }
 
 - (IBAction)tabGuideClick:(UIButton *)sender {
@@ -86,14 +98,14 @@
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
-  UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.bounds.size.width, 16)];
+  UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SW, 16)];
   view.backgroundColor = [UIColor whiteColor];
   return view;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
   if ([tableView isEqual:tvGuide]) {
-    if (indexPath.section == 0) return tableView.bounds.size.width / 2;
+    if (indexPath.section == 0) return SW / 2;
     else return 120;
   } else return 30;
 }
@@ -108,15 +120,14 @@
       }
       return cell;
     } else {
-      static NSString *guideCell = @"LTGuideCell";
-      LTGuideCell *cell = [tableView dequeueReusableCellWithIdentifier:guideCell];
+      LTGuideCell *cell = [tableView dequeueReusableCellWithIdentifier:@"LTGuideCell"];
       if (cell == nil) {
         // 注册tableview重用cell
-        UINib *guideNib = [UINib nibWithNibName:guideCell bundle:nil];
-        [tvGuide registerNib:guideNib forCellReuseIdentifier:guideCell];
-        cell = [tableView dequeueReusableCellWithIdentifier:guideCell];
-        [cell setData:guides[indexPath.row]];
+        UINib *guideNib = [UINib nibWithNibName:@"LTGuideCell" bundle:nil];
+        [tvGuide registerNib:guideNib forCellReuseIdentifier:@"LTGuideCell"];
+        cell = [tableView dequeueReusableCellWithIdentifier:@"LTGuideCell"];
       }
+      [cell setData:guides[indexPath.row]];
       return cell;
     }
   } else return [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];

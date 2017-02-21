@@ -21,6 +21,8 @@
 		004A03AC1E58913C007DD755 /* Guide.m in Sources */ = {isa = PBXBuildFile; fileRef = 004A03AB1E58913C007DD755 /* Guide.m */; };
 		004D00461E5357E000FA1638 /* Tag.m in Sources */ = {isa = PBXBuildFile; fileRef = 004D00451E5357E000FA1638 /* Tag.m */; };
 		004D00491E535E1100FA1638 /* LTSelectTagsVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 004D00481E535E1100FA1638 /* LTSelectTagsVc.m */; };
+		0051D8051E5C6DFA00FCF480 /* LTTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0051D8041E5C6DFA00FCF480 /* LTTest.m */; };
+		0051D8081E5C78A400FCF480 /* LTPublishGuideVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 0051D8071E5C78A400FCF480 /* LTPublishGuideVc.m */; };
 		0059142B1E4DB1CD00375902 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 0059142A1E4DB1CD00375902 /* MBProgressHUD.m */; };
 		0059142F1E4DC76C00375902 /* LTInputInfoVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 0059142E1E4DC76C00375902 /* LTInputInfoVc.m */; };
 		009743D31E4CBF930042E6CD /* LTRegisterVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 009743D21E4CBF930042E6CD /* LTRegisterVc.m */; };
@@ -71,6 +73,10 @@
 		004D00451E5357E000FA1638 /* Tag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tag.m; sourceTree = "<group>"; };
 		004D00471E535E1100FA1638 /* LTSelectTagsVc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTSelectTagsVc.h; sourceTree = "<group>"; };
 		004D00481E535E1100FA1638 /* LTSelectTagsVc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTSelectTagsVc.m; sourceTree = "<group>"; };
+		0051D8031E5C6DFA00FCF480 /* LTTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTTest.h; sourceTree = "<group>"; };
+		0051D8041E5C6DFA00FCF480 /* LTTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTTest.m; sourceTree = "<group>"; };
+		0051D8061E5C78A400FCF480 /* LTPublishGuideVc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTPublishGuideVc.h; sourceTree = "<group>"; };
+		0051D8071E5C78A400FCF480 /* LTPublishGuideVc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTPublishGuideVc.m; sourceTree = "<group>"; };
 		005914291E4DB1CD00375902 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		0059142A1E4DB1CD00375902 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		0059142D1E4DC76C00375902 /* LTInputInfoVc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTInputInfoVc.h; sourceTree = "<group>"; };
@@ -139,6 +145,8 @@
 				001FF5FB1E4E1625003B35A8 /* NSString+Extension.m */,
 				001FF5FC1E4E1625003B35A8 /* UIImageView+Extension.h */,
 				001FF5FD1E4E1625003B35A8 /* UIImageView+Extension.m */,
+				0051D8031E5C6DFA00FCF480 /* LTTest.h */,
+				0051D8041E5C6DFA00FCF480 /* LTTest.m */,
 			);
 			name = utils;
 			sourceTree = "<group>";
@@ -148,6 +156,8 @@
 			children = (
 				0034B9501E575392000E2B47 /* LTDiscoverVc.h */,
 				0034B9511E575392000E2B47 /* LTDiscoverVc.m */,
+				0051D8061E5C78A400FCF480 /* LTPublishGuideVc.h */,
+				0051D8071E5C78A400FCF480 /* LTPublishGuideVc.m */,
 			);
 			name = discover;
 			sourceTree = "<group>";
@@ -359,6 +369,7 @@
 				5C49DB221E4AE5E600E72541 /* ViewController.m in Sources */,
 				001FF5FE1E4E1625003B35A8 /* LTCommon.m in Sources */,
 				001FF5FF1E4E1625003B35A8 /* NSArray+Extension.m in Sources */,
+				0051D8051E5C6DFA00FCF480 /* LTTest.m in Sources */,
 				009743D31E4CBF930042E6CD /* LTRegisterVc.m in Sources */,
 				0059142F1E4DC76C00375902 /* LTInputInfoVc.m in Sources */,
 				001FF6001E4E1625003B35A8 /* NSData+Extension.m in Sources */,
@@ -370,6 +381,7 @@
 				0059142B1E4DB1CD00375902 /* MBProgressHUD.m in Sources */,
 				004A03A81E588BA3007DD755 /* LTBannerCell.m in Sources */,
 				5C47ED311E4C006500716D49 /* LTLoginNc.m in Sources */,
+				0051D8081E5C78A400FCF480 /* LTPublishGuideVc.m in Sources */,
 				004D00461E5357E000FA1638 /* Tag.m in Sources */,
 				5C49DB1C1E4AE5E600E72541 /* main.m in Sources */,
 				5C4C064A1E5AE2EB0075FE69 /* LTGuideCell.m in Sources */,

@@ -43,7 +43,7 @@
   [maContent addAttribute:NSParagraphStyleAttributeName value:ps range:NSMakeRange(0, content.length)];
   labContent.attributedText = maContent;
   
-  NSArray *tags = [data.tags.query findObjects];
+  NSArray *tags = [[[data relationForKey:@"tags"] query] findObjects];
   [tags enumerateObjectsUsingBlock:^(Tag *item, NSUInteger idx, BOOL *stop) {
     if (idx == 0) [labTags.text stringByAppendingString:item.name];
     else [labTags.text stringByAppendingString:[NSString stringWithFormat:@" %@", item.name]];
