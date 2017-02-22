@@ -61,7 +61,7 @@
   CGFloat h = image.size.height;
   CGFloat nw = w;
   CGFloat nh = h;
-  CGFloat len = 800 / [[UIScreen mainScreen] scale];
+  CGFloat len = 720 / [[UIScreen mainScreen] scale];
   if (nw > len) {
     nw = len;
     nh = h * nw / w;
