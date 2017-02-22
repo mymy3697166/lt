@@ -136,8 +136,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
   if ([tableView isEqual:tvGuide]) {
     if (indexPath.section > 0) {
-      Guide *guide = guides[indexPath.row];
-      [self performSegueWithIdentifier:@"discover_guide" sender:guide];
+      [self performSegueWithIdentifier:@"discover_guide" sender:guides[indexPath.row]];
     }
   } else {
     
