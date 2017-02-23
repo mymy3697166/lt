@@ -10,6 +10,7 @@
 
 @interface LTPublishGuideVc () <UIImagePickerControllerDelegate, UINavigationControllerDelegate> {
   __weak IBOutlet NSLayoutConstraint *lcBottom;
+  __weak IBOutlet NSLayoutConstraint *lcLeft;
   __weak IBOutlet UITextView *tvContent;
   
   UIAlertController *imageAlert;
@@ -43,6 +44,20 @@
   [imageAlert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
     [imageAlert dismissViewControllerAnimated:YES completion:nil];
   }]];
+}
+
+- (IBAction)segmentedClick:(UISegmentedControl *)sender {
+  if (sender.selectedSegmentIndex == 0) {
+    lcLeft.constant = 0;
+    [tvContent resignFirstResponder];
+  }
+  else {
+    lcLeft.constant = -SW;
+    [tvContent becomeFirstResponder];
+  }
+  [UIView animateWithDuration:0.25 animations:^{
+    [self.view layoutIfNeeded];
+  }];
 }
 
 - (void)keyboardWillShow:(NSNotification *)nc {

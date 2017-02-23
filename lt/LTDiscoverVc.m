@@ -31,11 +31,12 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-  guides = [LTTest getGuides];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
   [super viewDidAppear:animated];
+  guides = [LTTest getGuides];
+  [tvGuide reloadData];
   
   alert = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
   [alert addAction:[UIAlertAction actionWithTitle:@"发表攻略" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {

@@ -11,5 +11,5 @@
 #import "LTCommon.h"
 
 @interface LTVc : UIViewController
-
+- (void)initImagePickerAllowsEditing:(BOOL)allowsEditing withBlock:(void(^)(UIImage *))block;
 @end

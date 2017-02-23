@@ -28,7 +28,6 @@
 }
 
 - (void)setData:(Guide *)data {
-  NSLog(@"%@", data);
   [ivCover loadAVFile:data.cover];
   
   labTitle.text = data.title;
