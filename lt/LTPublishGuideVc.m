@@ -8,13 +8,16 @@
 
 #import "LTPublishGuideVc.h"
 
-@interface LTPublishGuideVc () <UIImagePickerControllerDelegate, UINavigationControllerDelegate> {
+@interface LTPublishGuideVc () {
+  __weak IBOutlet UIButton *btnCover;
   __weak IBOutlet NSLayoutConstraint *lcBottom;
   __weak IBOutlet NSLayoutConstraint *lcLeft;
   __weak IBOutlet UITextView *tvContent;
+  __weak IBOutlet UITextField *tfTitle;
+  __weak IBOutlet UILabel *labSelectTagsPlaceHolder;
+  __weak IBOutlet UIView *vSelectTags;
   
-  UIAlertController *imageAlert;
-  UIImagePickerController *ipc;
+  UIAlertController *tagAlert;
 }
 
 @end
@@ -30,19 +33,34 @@
 - (void)viewDidAppear:(BOOL)animated {
   [super viewDidAppear:animated];
   
-  imageAlert = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
-  ipc = [[UIImagePickerController alloc] init];
-  ipc.delegate = self;
-  [imageAlert addAction:[UIAlertAction actionWithTitle:@"拍照" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-    ipc.sourceType = UIImagePickerControllerSourceTypeCamera;
-    [self presentViewController:ipc animated:YES completion:nil];
+  [self initImagePickerWithBlock:^(UIImage *image, NSString *name) {
+    NSData *data = [Cm compressImage:image];
+    NSString *prefix;
+    if ([name isEqualToString:@"insert_image"]) prefix = @"guide_content_image";
+    else prefix = @"guide_cover_image";
+    NSString *fn = [NSString stringWithFormat:@"%@_%@.jpg", prefix, [[NSDate date] toStringWithFormat:@"yyyyMMddhhmmssSSS"]];
+    AVFile *file = [AVFile fileWithName:fn data:data];
+    [Cm showLoading];
+    [file saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+      [Cm hideLoading];
+      if (error) {
+        NSLog(@"%@", error);
+        return;
+      }
+      if ([name isEqualToString:@"insert_image"]) {
+        NSString *imageTag = [NSString stringWithFormat:@"\n[img %@]\n", file.url];
+        tvContent.text = [tvContent.text stringByReplacingCharactersInRange:tvContent.selectedRange withString:imageTag];
+      }
+      else [btnCover setImage:[UIImage imageWithData:data] forState:UIControlStateNormal];
+    }];
+  }];
+  
+  tagAlert = [UIAlertController alertControllerWithTitle:@"所有标签" message:@"\n\n\n\n\n\n\n\n\n\n" preferredStyle:UIAlertControllerStyleActionSheet];
+  [tagAlert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+    
   }]];
-  [imageAlert addAction:[UIAlertAction actionWithTitle:@"相册" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-    ipc.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
-    [self presentViewController:ipc animated:YES completion:nil];
-  }]];
-  [imageAlert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
-    [imageAlert dismissViewControllerAnimated:YES completion:nil];
+  [tagAlert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+    
   }]];
 }
 
@@ -85,29 +103,20 @@
   [UIView commitAnimations];
 }
 
+- (IBAction)coverImageClick:(UIButton *)sender {
+  [self showImagePickerAllowsEditing:YES withName:@"cover_image"];
+}
+
+- (IBAction)selectTagsClick:(UITapGestureRecognizer *)sender {
+  [self presentViewController:tagAlert animated:YES completion:nil];
+}
+
+- (IBAction)leftViewClick:(UITapGestureRecognizer *)sender {
+  [tfTitle resignFirstResponder];
+}
+
 - (IBAction)insertImageClick:(UIButton *)sender {
-  [self presentViewController:imageAlert animated:YES completion:nil];
-}
-
-- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
-  UIImage *image = info[UIImagePickerControllerOriginalImage];
-  NSData *data = [Cm compressImage:image];
-  NSString *fn = [NSString stringWithFormat:@"guide_content_image_%@.jpg", [[NSDate date] toStringWithFormat:@"yyyyMMddhhmmssSSS"]];
-  AVFile *file = [AVFile fileWithName:fn data:data];
-  [Cm showLoading];
-  [file saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-    [Cm hideLoading];
-    if (error) {
-      NSLog(@"%@", error);
-      return;
-    }
-    tvContent.text = [tvContent.text stringByAppendingString:[NSString stringWithFormat:@"\n[img %@]\n", file.url]];
-  }];
-  [ipc dismissViewControllerAnimated:YES completion:nil];
-}
-
-- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
-  [ipc dismissViewControllerAnimated:YES completion:nil];
+  [self showImagePickerAllowsEditing:NO withName:@"insert_image"];
 }
 
 - (IBAction)previewClick:(UIButton *)sender {

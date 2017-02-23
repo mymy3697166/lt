@@ -10,6 +10,9 @@
 #import <UIKit/UIVisualEffectView.h>
 #import "LTCommon.h"
 
+typedef void(^UIImagePickerDidFinishBlock)(UIImage *, NSString *);
+
 @interface LTVc : UIViewController
-- (void)initImagePickerAllowsEditing:(BOOL)allowsEditing withBlock:(void(^)(UIImage *))block;
+- (void)initImagePickerWithBlock:(UIImagePickerDidFinishBlock)block;
+- (void)showImagePickerAllowsEditing:(BOOL)allowsEditing withName:(NSString *)name;
 @end

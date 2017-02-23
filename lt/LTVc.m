@@ -7,12 +7,12 @@
 //
 
 #import "LTVc.h"
-typedef void(^UIImagePickerDidFinishBlock)(UIImage *);
 
 @interface LTVc () <UIImagePickerControllerDelegate, UINavigationControllerDelegate> {
   UIAlertController *photoAlert;
   UIImagePickerController *ipc;
   UIImagePickerDidFinishBlock imagePickerDidFinishBlock;
+  NSString *imagePickerName;
 }
 
 @end
@@ -25,13 +25,13 @@ typedef void(^UIImagePickerDidFinishBlock)(UIImage *);
   self.navigationItem.backBarButtonItem = temporaryBarButtonItem;
 }
 
-- (void)initImagePickerAllowsEditing:(BOOL)allowsEditing withBlock:(UIImagePickerDidFinishBlock)block {
+- (void)initImagePickerWithBlock:(UIImagePickerDidFinishBlock)block {
   imagePickerDidFinishBlock = block;
   
   ipc = [[UIImagePickerController alloc] init];
-  ipc.allowsEditing = allowsEditing;
   ipc.delegate = self;
   
+  photoAlert = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
   [photoAlert addAction:[UIAlertAction actionWithTitle:@"拍照" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
     ipc.sourceType = UIImagePickerControllerSourceTypeCamera;
     [self presentViewController:ipc animated:YES completion:nil];
@@ -46,11 +46,14 @@ typedef void(^UIImagePickerDidFinishBlock)(UIImage *);
 }
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
-  if (ipc.allowsEditing) imagePickerDidFinishBlock(info[UIImagePickerControllerEditedImage]);
-  else imagePickerDidFinishBlock(info[UIImagePickerControllerOriginalImage]);
+  if (ipc.allowsEditing) imagePickerDidFinishBlock(info[UIImagePickerControllerEditedImage], imagePickerName);
+  else imagePickerDidFinishBlock(info[UIImagePickerControllerOriginalImage], imagePickerName);
+  [ipc dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (void)showImagePicker {
+- (void)showImagePickerAllowsEditing:(BOOL)allowsEdition withName:(NSString *)name {
+  imagePickerName = name;
+  ipc.allowsEditing = allowsEdition;
   if (photoAlert) [self presentViewController:photoAlert animated:YES completion:nil];
   else @throw [[NSException alloc] initWithName:@"未初始化ImagePicker。" reason:@"调用showImagePicker前请先调用initImagePickerAllowsEditing。" userInfo:nil];
 }

@@ -8,7 +8,7 @@
 
 #import "LTInputInfoVc.h"
 
-@interface LTInputInfoVc () <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIPickerViewDelegate, UIPickerViewDataSource> {
+@interface LTInputInfoVc () <UIPickerViewDelegate, UIPickerViewDataSource> {
   __weak IBOutlet UIButton *btnAvatar;
   __weak IBOutlet UITextField *tfNickname;
   __weak IBOutlet UITextField *tfGender;
@@ -26,11 +26,9 @@
   AVFile *avatar;
   NSInteger days;
 }
-
 @end
 
 @implementation LTInputInfoVc
-
 - (void)viewDidLoad {
   [super viewDidLoad];
   btnNext.layer.cornerRadius = 20;
@@ -54,21 +52,20 @@
 - (void)viewDidAppear:(BOOL)animated {
   [super viewDidAppear:animated];
   // 选择头像菜单
-  avatarAlert = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
-  ipc = [[UIImagePickerController alloc] init];
-  ipc.allowsEditing = YES;
-  ipc.delegate = self;
-  [avatarAlert addAction:[UIAlertAction actionWithTitle:@"拍照" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-    ipc.sourceType = UIImagePickerControllerSourceTypeCamera;
-    [self presentViewController:ipc animated:YES completion:nil];
-  }]];
-  [avatarAlert addAction:[UIAlertAction actionWithTitle:@"相册" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-    ipc.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
-    [self presentViewController:ipc animated:YES completion:nil];
-  }]];
-  [avatarAlert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
-    [avatarAlert dismissViewControllerAnimated:YES completion:nil];
-  }]];
+  [self initImagePickerWithBlock:^(UIImage *image, NSString *name) {
+    NSData *data = [Cm compressAvatar:image];
+    [Cm showLoading];
+    NSString *fn = [NSString stringWithFormat:@"user_avatar_image_%@.jpg", [[NSDate date] toStringWithFormat:@"yyyyMMddhhmmssSSS"] ];
+    avatar = [AVFile fileWithName:fn data:data];
+    [avatar saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+      [Cm hideLoading];
+      if (error) {
+        NSLog(@"%@", error);
+        return;
+      }
+      [btnAvatar setBackgroundImage:[UIImage imageWithData:data] forState:UIControlStateNormal];
+    }];
+  }];
   // 选择性别菜单
   genderAlert = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
   [genderAlert addAction:[UIAlertAction actionWithTitle:@"男" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
@@ -137,27 +134,6 @@
     else days = 31;
     [pickerView reloadComponent:2];
   }
-}
-
-- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
-  UIImage *image = info[UIImagePickerControllerEditedImage];
-  NSData *data = [Cm compressAvatar:image];
-  [Cm showLoading];
-  NSString *fn = [NSString stringWithFormat:@"%@.jpg", [[NSDate date] toStringWithFormat:@"yyyyMMddhhmmssSSS"] ];
-  avatar = [AVFile fileWithName:fn data:data];
-  [avatar saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-    [Cm hideLoading];
-    if (error) {
-      NSLog(@"%@", error);
-      return;
-    }
-    [btnAvatar setBackgroundImage:[UIImage imageWithData:data] forState:UIControlStateNormal];
-  }];
-  [ipc dismissViewControllerAnimated:YES completion:nil];
-}
-
-- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
-  [ipc dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (IBAction)avatarClick:(UIButton *)sender {
