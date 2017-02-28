@@ -19,6 +19,7 @@
 		004A03A81E588BA3007DD755 /* LTBannerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 004A03A61E588BA3007DD755 /* LTBannerCell.m */; };
 		004A03A91E588BA3007DD755 /* LTBannerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 004A03A71E588BA3007DD755 /* LTBannerCell.xib */; };
 		004A03AC1E58913C007DD755 /* Guide.m in Sources */ = {isa = PBXBuildFile; fileRef = 004A03AB1E58913C007DD755 /* Guide.m */; };
+		004CFF541E65A5440026A7C3 /* BTImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 004CFF531E65A5440026A7C3 /* BTImage.m */; };
 		004D00461E5357E000FA1638 /* Tag.m in Sources */ = {isa = PBXBuildFile; fileRef = 004D00451E5357E000FA1638 /* Tag.m */; };
 		004D00491E535E1100FA1638 /* LTSelectTagsVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 004D00481E535E1100FA1638 /* LTSelectTagsVc.m */; };
 		0051D8051E5C6DFA00FCF480 /* LTTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0051D8041E5C6DFA00FCF480 /* LTTest.m */; };
@@ -69,6 +70,8 @@
 		004A03A71E588BA3007DD755 /* LTBannerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LTBannerCell.xib; sourceTree = "<group>"; };
 		004A03AA1E58913C007DD755 /* Guide.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Guide.h; sourceTree = "<group>"; };
 		004A03AB1E58913C007DD755 /* Guide.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Guide.m; sourceTree = "<group>"; };
+		004CFF521E65A5440026A7C3 /* BTImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTImage.h; sourceTree = "<group>"; };
+		004CFF531E65A5440026A7C3 /* BTImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTImage.m; sourceTree = "<group>"; };
 		004D00441E5357E000FA1638 /* Tag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tag.h; sourceTree = "<group>"; };
 		004D00451E5357E000FA1638 /* Tag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tag.m; sourceTree = "<group>"; };
 		004D00471E535E1100FA1638 /* LTSelectTagsVc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTSelectTagsVc.h; sourceTree = "<group>"; };
@@ -256,6 +259,8 @@
 				004D00451E5357E000FA1638 /* Tag.m */,
 				004A03AA1E58913C007DD755 /* Guide.h */,
 				004A03AB1E58913C007DD755 /* Guide.m */,
+				004CFF521E65A5440026A7C3 /* BTImage.h */,
+				004CFF531E65A5440026A7C3 /* BTImage.m */,
 			);
 			name = models;
 			sourceTree = "<group>";
@@ -374,6 +379,7 @@
 				0059142F1E4DC76C00375902 /* LTInputInfoVc.m in Sources */,
 				001FF6001E4E1625003B35A8 /* NSData+Extension.m in Sources */,
 				5C47ED341E4C073200716D49 /* LTVc.m in Sources */,
+				004CFF541E65A5440026A7C3 /* BTImage.m in Sources */,
 				5C49DB1F1E4AE5E600E72541 /* AppDelegate.m in Sources */,
 				001FF6011E4E1625003B35A8 /* NSDate+Extension.m in Sources */,
 				001FF6031E4E1625003B35A8 /* NSString+Extension.m in Sources */,
